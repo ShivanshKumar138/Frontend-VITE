@@ -180,22 +180,24 @@ const win = [
   },
 ];
 const Home = ({ children }) => {
-  const [winners, setWinners] = useState(win);
+  const [winners, setWinners] = useState(win || []); // Default to empty array if `win` is undefined or not set
+
   useEffect(() => {
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-
+  
     window.addEventListener("resize", setVh);
     setVh();
-
+  
     return () => window.removeEventListener("resize", setVh);
   }, []);
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setWinners((prevWinners) => {
+        if (prevWinners.length === 0) return prevWinners; // Prevent errors if no winners
         const lastWinner = prevWinners[prevWinners.length - 1];
         const newWinners = [lastWinner, ...prevWinners.slice(0, -1)];
         return newWinners;
@@ -203,9 +205,10 @@ const Home = ({ children }) => {
     }, 2000); // Adjust the timing as needed
     return () => clearInterval(interval);
   }, []);
-
-  const lastWinner = winners[winners.length - 1];
-  const otherWinners = winners.slice(0, -1);
+  
+  const lastWinner = winners.length > 0 ? winners[winners.length - 1] : null;
+  const otherWinners = winners.length > 1 ? winners.slice(0, -1) : [];
+  
 
   const images = [
     {
@@ -487,7 +490,7 @@ const Home = ({ children }) => {
   style={{ color: "rgb(145,179,255)" }}
   onClick={() => navigate("/messages")}
 >
-  <CustomerIcon style={{ width: 25, height: 25, fill: "rgb(145,179,255)" }} />
+  {/* <CustomerIcon style={{ width: 25, height: 25, fill: "rgb(145,179,255)" }} /> */}
 </IconButton>
               </Grid>
             </Grid>
