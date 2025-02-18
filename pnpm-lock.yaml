@@ -59,6 +59,9 @@ importers:
       '@mui/x-date-pickers-pro':
         specifier: ^7.27.0
         version: 7.27.0(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(react@18.0.0))(@mui/material@6.4.4(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(react-dom@18.0.0(react@18.0.0))(react@18.0.0))(@mui/system@6.4.3(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(react@18.0.0))(@types/react@18.2.6)(date-fns@2.30.0)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
+      '@shadcn/ui':
+        specifier: ^0.0.4
+        version: 0.0.4
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -2410,6 +2413,10 @@ packages:
   '@rushstack/eslint-patch@1.10.5':
     resolution: {integrity: sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A==}
 
+  '@shadcn/ui@0.0.4':
+    resolution: {integrity: sha512-0dtu/5ApsOZ24qgaZwtif8jVwqol7a4m1x5AxPuM1k5wxhqU7t/qEfBGtaSki1R8VlbTQfCj5PAlO45NKCa7Gg==}
+    hasBin: true
+
   '@sinclair/typebox@0.24.51':
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
 
@@ -3460,6 +3467,10 @@ packages:
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
+
+  chalk@5.2.0:
+    resolution: {integrity: sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   chalk@5.4.1:
     resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
@@ -11138,6 +11149,17 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.5': {}
 
+  '@shadcn/ui@0.0.4':
+    dependencies:
+      chalk: 5.2.0
+      commander: 10.0.1
+      execa: 7.2.0
+      fs-extra: 11.3.0
+      node-fetch: 3.3.2
+      ora: 6.3.1
+      prompts: 2.4.2
+      zod: 3.24.2
+
   '@sinclair/typebox@0.24.51': {}
 
   '@sinclair/typebox@0.27.8': {}
@@ -12430,6 +12452,8 @@ snapshots:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+
+  chalk@5.2.0: {}
 
   chalk@5.4.1: {}
 

@@ -599,7 +599,6 @@ const Home = ({ children }) => {
 
                
              
-                Winning details
             
             </Box>
 
