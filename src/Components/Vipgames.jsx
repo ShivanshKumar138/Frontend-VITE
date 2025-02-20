@@ -535,10 +535,7 @@ return (
         {[
           { label: "Jili Games", img: {jilli} },
           { label: "JDB Games", img: {jdb} },
-          { label: "TopBet Gaming", img: {TopBet} },
-          { label: "Jili Games", img: {jilli} },
-          { label: "JDB Games", img: {jdb} },
-          { label: "TopBet Gaming", img: {TopBet} },
+          { label: "TopBet Gaming", img: {TopBet}}
         ].map((tab, index) => (
           <Tab
             key={index}

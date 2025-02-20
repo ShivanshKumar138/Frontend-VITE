@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import IconButton from "@mui/material/IconButton";
 import Mobile from "../Components/Mobile";
-import { Typography, Grid, Box, TextField } from "@mui/material";
+import { Typography, Grid, Box, TextField} from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
@@ -18,6 +18,9 @@ import DialogContentText from "@mui/material/DialogContentText";
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from "react-router-dom";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import { FormControlLabel, Radio } from "@mui/material";
+// import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import "../App.css";
 import axios from "axios";
 import {
@@ -44,6 +47,7 @@ import { useTheme } from "@mui/material/styles";
 // import icon from "../../public/games/assets/Clock.png"
 import RemoveIcon from "@mui/icons-material/IndeterminateCheckBox";
 import AddIcon from "@mui/icons-material/AddBox";
+import { CheckCircleIcon } from "lucide-react";
 const countdownSound = new Audio("/assets/sound.mp3");
 countdownSound.loop = true;
 
@@ -120,6 +124,7 @@ const multipliers = [
 ];
 
 const Head = ({ timerKey }) => {
+  const [agree, setAgree] = useState(false);
   const [activeId, setActiveId] = useState(images[0].id);
   const [selectedTimer, setSelectedTimer] = useState("1Min");
   const [rows, setRows] = useState([]);
@@ -142,7 +147,7 @@ const Head = ({ timerKey }) => {
   const [gameResult, setGameResult] = useState("");
   const [value, setValue] = useState(0);
   const [bets, setBets] = useState([]);
-  const [selectedColor, setSelectedColor] = useState("RGB(71,129,255)");
+  const [selectedColor, setSelectedColor] = useState("rgb(242, 167, 92)");
   const [winloss, setWinLoss] = useState(0);
   const [popupperiod, setPopupPeriod] = useState(0);
   const [popupresult, setPopupResult] = useState(0);
@@ -853,17 +858,18 @@ const Head = ({ timerKey }) => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "space-between",
                 }}
               >
                 <Button
                   variant="filled"
                   onClick={navigateToPage2}
-                  fullWidth
+                
                   sx={{
+                    width:"130px",
                     marginLeft: "10px",
                     color: "white",
-                    backgroundColor: "#D23838",
+                    backgroundColor: "rgb(250,90,91)",
                     "&:hover": {
                       backgroundColor: "#D23838",
                     },
@@ -876,10 +882,11 @@ const Head = ({ timerKey }) => {
                 <Button
                   variant="contained"
                   onClick={navigateToPage1}
-                  fullWidth
+                  // fullWidth
                   sx={{
+                    width:"130px",
                     marginLeft: "10px",
-                    backgroundColor: "#17B15E",
+                    backgroundColor: "rgb(24,183,97)",
                     "&:hover": {
                       backgroundColor: "#17B15E",
                     },
@@ -895,7 +902,7 @@ const Head = ({ timerKey }) => {
               item
               sx={{
                 backgroundColor: "#ffffff",
-                borderRadius: "12px",
+                borderRadius: "20px",
                 width: "90%",
                 padding: "0 5px",
                 display: "flex",
@@ -954,7 +961,7 @@ const Head = ({ timerKey }) => {
               </Button>
             </Grid>
           </Grid>
-
+         
           <Grid
             container
             spacing={1}
@@ -969,6 +976,7 @@ const Head = ({ timerKey }) => {
               color: "white",
             }}
           >
+           
             {images.map((image) => (
               <Grid
                 item
@@ -1029,7 +1037,7 @@ const Head = ({ timerKey }) => {
             ))}
           </Grid>
 
-          <Grid
+          {/* <Grid
             container
             spacing={0}
             mt={2}
@@ -1114,6 +1122,7 @@ const Head = ({ timerKey }) => {
                 pr: "4%",
               }}
             >
+              
               <Grid item>
                 <Typography variant="caption" sx={{ color: "white" }}>
                   Time Remaining
@@ -1215,8 +1224,170 @@ const Head = ({ timerKey }) => {
                 </Typography>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
 
+
+         <br/> 
+      <Grid
+      container
+      spacing={0}
+      mt={3}
+      sx={{
+        height:"105px",
+        maxWidth: "90%",
+        margin: "auto",
+        background: "rgb(105,174,254)",
+        borderRadius: "15px",
+        padding: "3px",
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      {/* Top Cut-Out Circle */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "-10px",
+          left: "50%",
+          width: "20px",
+          height: "20px",
+          backgroundColor: "rgb(242,242,241)",
+          borderRadius: "50%",
+          transform: "translateX(-50%)",
+        }}
+      />
+
+      {/* Bottom Cut-Out Circle */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "-10px",
+          left: "50%",
+          width: "20px",
+          height: "20px",
+          backgroundColor: "rgb(242,242,241)",
+          borderRadius: "50%",
+          transform: "translateX(-50%)",
+        }}
+      />
+
+      {/* Left Side - How to Play & Winning Numbers */}
+      <Grid
+        item
+        xs={6}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          paddingLeft: "2%",
+        }}
+      >
+        {/* "How to Play" Button */}
+        <Button
+          variant="outlined"
+          size="small"
+          sx={{
+            width:"150px",
+            color: "white",
+            borderColor: "white",
+            padding: "2px 8px",
+            textTransform: "initial",
+            borderRadius: "20px",
+            fontSize: "10px",
+            display: "flex",
+            alignItems: "center",
+          }}
+          startIcon={<NoteIcon />}
+        >
+          How to play
+        </Button>
+
+        {/* Win Timer Text */}
+        <Typography variant="caption" sx={{ color: "white", mt: 0 }}>
+          {`Win Go ${selectedTimer}`}
+        </Typography>
+
+        {/* Winning Numbers */}
+        <Box sx={{ display: "flex", mt: 0}}>
+          {firstFiveRows.map((row, index) => (
+            <img
+              key={index}
+              src={`../../games/assets/games/${row.numberOutcome.trim()}.png`}
+              alt={`Image ${index + 1}`}
+              style={{
+                width: "25px",
+                height: "25px",
+                marginRight: index !== firstFiveRows.length - 6 ? "6px" : "0",
+              }}
+            />
+          ))}
+        </Box>
+      </Grid>
+
+      {/* Dashed Divider */}
+      <Box
+        sx={{
+          position: "absolute",
+          height: "80%",
+          width: "0px",
+          // background: "white",
+          left: "50%",
+          transform: "translateX(-50%)",
+          borderLeft: "3px dotted rgba(243, 227, 227, 0.86)",
+          marginLeft: "1px",
+        }}
+      />
+
+      {/* Right Side - Timer */}
+      <Grid
+  item
+  xs={6}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-end",
+    paddingLeft:"15%",
+    paddingRight: "4%",
+    width: "100%", // Ensure full width
+  }}
+>
+  {/* "Time Remaining" Label */}
+  <Typography variant="caption" sx={{ color: "white",fontWeight:"300px" }}>
+    Time remaining
+  </Typography>
+
+  {/* Countdown Timer */}
+  <Box sx={{ display: "flex", mt: 0, justifyContent: "flex-end", width: "100%",paddingLeft:4 }}>
+    {[minutes[0], minutes[1], ":", seconds[0], seconds[1]].map((char, index) => (
+      <Box
+        key={index}
+        sx={{
+          width: "22px",
+          height: "30px",
+          backgroundColor: char === ":" ? "#f2f2f1" : "#f2f2f1",
+          color: "#000",
+          fontWeight: "bold",
+          textAlign: "center",
+          lineHeight: "30px",
+          margin: "0 2px",
+          fontSize: "18px",
+        }}
+      >
+        {char}
+      </Box>
+    ))}
+  </Box>
+
+  {/* Period ID */}
+  <Typography variant="caption" sx={{ color: "white", fontSize: "14px", mt: 1 }}>
+    {periodId ? periodId : ""}
+  </Typography>
+</Grid>
+
+    </Grid>
           <Grid
             container
             mt={2}
@@ -1299,7 +1470,7 @@ const Head = ({ timerKey }) => {
                 }}
                 variant="contained"
                 sx={{
-                  backgroundColor: "RGB(64,173,114)",
+                  backgroundColor: "rgb(24,183,97)",
                   "&:hover": {
                     backgroundColor: "RGB(64,173,114)",
                   },
@@ -1316,7 +1487,7 @@ const Head = ({ timerKey }) => {
                 }}
                 variant="contained"
                 sx={{
-                  backgroundColor: "#9B48DB",
+                  backgroundColor: "rgb(200,111,254)",
                   "&:hover": {
                     backgroundColor: "#9B48DB",
                   },
@@ -1334,7 +1505,7 @@ const Head = ({ timerKey }) => {
                 }}
                 variant="contained"
                 sx={{
-                  backgroundColor: "RGB(253,86,92)",
+                  backgroundColor: "rgb(250,90,91)",
                   "&:hover": {
                     backgroundColor: "RGB(253,86,92)",
                   },
@@ -1372,13 +1543,13 @@ const Head = ({ timerKey }) => {
               </Grid>
             </Grid>
             {/* Third Row */}
-            <Box
+            {/* <Box
               sx={{
-                width: "80%",
+                width: "70%",
                 marginX: "auto",
                 display: "flex",
                 justifyContent: "center",
-                p: 2,
+                p: 1,
               }}
             >
               <StyledButtonGroup aria-label="multiplier selection">
@@ -1399,14 +1570,245 @@ const Head = ({ timerKey }) => {
                   </StyledButton>
                 ))}
               </StyledButtonGroup>
-            </Box>
+            </Box> */}
+
+
+
+{/* <Box
+  sx={{
+    width: "70%",
+    marginX: "auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 1.5, // Adds spacing between "Random" and other buttons
+    p: 1,
+  }}
+>
+  <StyledButtonGroup aria-label="multiplier selection">
+    {multipliers.map((multiplier) => (
+      <StyledButton
+        key={multiplier.label}
+        onClick={() => handleMultiplierChange(multiplier)}
+        active={
+          !multiplier.isRandom && selectedMultiplier === multiplier.value
+            ? 1
+            : 0
+        }
+        isRandom={multiplier.isRandom}
+        disabled={isRandomizing}
+        sx={{
+          borderRadius: multiplier.isRandom ? "20px" : "10px", // Fully rounded for "Random"
+          border: multiplier.isRandom ? "1px solid red" : "none",
+          color: multiplier.isRandom ? "red" : "inherit",
+          background: multiplier.isRandom ? "transparent" : "inherit",
+          px: multiplier.isRandom ? 2.5 : 1.5, // Padding adjustments
+          py: 1,
+          minWidth: "45px", // Ensures proper sizing
+        }}
+      >
+        {multiplier.label}
+      </StyledButton>
+    ))}
+  </StyledButtonGroup>
+</Box> */}
+        {/* <Box
+  sx={{
+    width: "100%",
+    marginX: "auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 0.5, // Space between "Random" and others
+    p: 1,
+  }}
+>
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[0])}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      border: "1px solid red",
+      color: "red",
+      background: "transparent",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "bold",
+    }}
+  >
+    RANDOM
+  </StyledButton>
+
+
+<StyledButton
+    onClick={() => handleMultiplierChange(multipliers[1])}
+    active={selectedMultiplier === multipliers[1].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x1
+  </StyledButton>
+
+
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[2])}
+    active={selectedMultiplier === multipliers[2].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x5
+  </StyledButton>
+
+
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[3])}
+    active={selectedMultiplier === multipliers[3].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x10
+  </StyledButton>
+
+
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[4])}
+    active={selectedMultiplier === multipliers[4].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x20
+  </StyledButton>
+
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[5])}
+    active={selectedMultiplier === multipliers[5].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x50
+  </StyledButton>
+
+
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[6])}
+    active={selectedMultiplier === multipliers[6].value ? 1 : 0}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "10px", // Fully rounded,
+      color: "black",
+      background: "rgb(247,248,255)",
+      px: 1, // Padding adjustments
+      py: 1,
+      minWidth: "30px", // Proper sizing
+      fontWeight: "normal",
+    }}
+  >
+    x100
+  </StyledButton>
+</Box> */}
+
+<Box
+  sx={{
+    mt:2,
+    width: "100%",
+    marginX: "auto",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 0.3, // Reduced gap for a compact look
+    p: 0.5, // Less padding
+  }}
+>
+  {/* Random Button - Fully Rounded */}
+  <StyledButton
+    onClick={() => handleMultiplierChange(multipliers[0])}
+    disabled={isRandomizing}
+    sx={{
+      borderRadius: "9px", // Fully rounded
+      border: "1px solid red",
+      color: "red",
+      background: selectedMultiplier === multipliers[0].value ? "rgba(255, 0, 0, 0.1)" : "transparent",
+      px: 2,
+      py: 1, // Smaller padding
+      minWidth: "45px", // Reduced size
+      fontSize: "12px", // Smaller text
+      fontWeight: "bold",
+    }}
+  >
+    RANDOM
+  </StyledButton>
+
+  {multipliers.slice(1).map((multiplier) => (
+    <StyledButton
+      key={multiplier.label}
+      onClick={() => handleMultiplierChange(multiplier)}
+      disabled={isRandomizing}
+      sx={{
+        borderRadius: "8px", // Slightly rounded
+        color: selectedMultiplier === multiplier.value ? "white" : "black",
+        background: selectedMultiplier === multiplier.value ? "rgb(24,183,97)" : "rgb(247,248,255)", // Change when selected
+        px: 1.2,
+        py: 1, // Smaller padding
+        minWidth: "35px", // Smaller button width
+        fontSize: "12px", // Smaller text
+        fontWeight: selectedMultiplier === multiplier.value ? "bold" : "normal",
+        transition: "0.2s ease-in-out", // Smooth transition
+      }}
+    >
+      {multiplier.label}
+    </StyledButton>
+  ))}
+</Box>
+
+
             {/* Fourth Row */}
             <Grid
               container
               item
               xs={12}
               justifyContent="center"
-              sx={{ marginBottom: "10px" }}
+              sx={{ marginBottom: "10px" ,marginLeft:0}}
             >
               <Grid item>
                 <Button
@@ -1416,10 +1818,10 @@ const Head = ({ timerKey }) => {
                   }}
                   variant="contained"
                   sx={{
-                    width: "150px",
+                    width: "170px",
                     borderRadius: "20px 0 0 20px",
                     margin: "0",
-                    backgroundColor: "rgb(255,168,46)",
+                    backgroundColor: "rgb(255,170,86)",
                     "&:hover": {
                       backgroundColor: "rgb(255,168,46)",
                     },
@@ -1436,9 +1838,10 @@ const Head = ({ timerKey }) => {
                   }}
                   variant="contained"
                   sx={{
-                    width: "150px",
+                    width: "170px",
                     borderRadius: "0 20px 20px 0",
                     margin: "0",
+                    backgroundColor:"rgb(110,169,245)",
                   }}
                 >
                   Small
@@ -1513,17 +1916,17 @@ const Head = ({ timerKey }) => {
                     width: "100%",
                     height: "70%",
                     background: selectedColor,
-                    clipPath: "polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%)",
+                    clipPath: "polygon(50.7% 100.3%, 100.1% 61%, 100.1% 0%, 0% 0%, 0.1% 71.3%)",
                   }}
-                ></div>
-                <div style={{ position: "relative" }}>
-                  <Typography variant="h6">{`Win Go ${selectedTimer}`}</Typography>
-                  <Typography variant="body1">{`${selectedItem} is selected`}</Typography>
+                >
+                   <Typography variant="h6">{`Win Go ${selectedTimer}`}</Typography>
+                   <Typography variant="body1">{`${selectedItem} is selected`}</Typography>
                 </div>
+                
               </Grid>
-              <Grid padding={1}>
-              <Grid item xs={12}>
-  <Grid container justifyContent="space-between" alignItems="center">
+              <Grid container padding={1}>
+  {/* Balance Section */}
+  <Grid item xs={6}>
     <Typography
       variant="h6"
       sx={{
@@ -1534,313 +1937,123 @@ const Head = ({ timerKey }) => {
     >
       Balance
     </Typography>
-    <Box sx={{ display: 'flex', gap: '5px' }}>
-      <Button
-        
-        sx={{
-          minWidth: "40px",
-          height: "25px",
-          padding: "2px 4px",
-          fontSize: "0.75rem",
-          backgroundColor: activeBetAmount === 1 ? selectedColor : "#f2f2f1",
-          color: activeBetAmount === 1 ? "white" : "#666",
-          "&:hover": {
-            backgroundColor: activeBetAmount === 1 ? selectedColor : "#f2f2f1",
-          },
-        }}
-        onClick={() => {
-          handleBetAmount(1);
-          setActiveBetAmount(1);
-        }}
-      >
-        {"1"}
-      </Button>
-      <Button
-        
-        sx={{
-          minWidth: "40px",
-          height: "25px",
-          padding: "2px 4px",
-          fontSize: "0.75rem",
-          backgroundColor: activeBetAmount === 10 ? selectedColor : "#f2f2f1",
-          color: activeBetAmount === 10 ? "white" : "#666",
-          "&:hover": {
-            backgroundColor: activeBetAmount === 10 ? selectedColor : "#f2f2f1",
-          },
-        }}
-        onClick={() => {
-          handleBetAmount(10);
-          setActiveBetAmount(10);
-        }}
-      >
-        {"10"}
-      </Button>
-      <Button
-      
-        sx={{
-          minWidth: "40px",
-          height: "25px",
-          padding: "2px 4px",
-          fontSize: "0.75rem",
-          backgroundColor: activeBetAmount === 100 ? selectedColor : "#f2f2f1",
-          color: activeBetAmount === 100 ? "white" : "#666",
-          "&:hover": {
-            backgroundColor: activeBetAmount === 100 ? selectedColor : "#f2f2f1",
-          },
-        }}
-        onClick={() => {
-          handleBetAmount(100);
-          setActiveBetAmount(100);
-        }}
-      >
-        {"100"}
-      </Button>
-      <Button
-      
-        sx={{
-          minWidth: "40px",
-          height: "25px",
-          padding: "2px 4px",
-          fontSize: "0.75rem",
-          backgroundColor: activeBetAmount === 1000 ? selectedColor : "#f2f2f1",
-          color: activeBetAmount === 1000 ? "white" : "#666",
-          "&:hover": {
-            backgroundColor: activeBetAmount === 1000 ? selectedColor : "#f2f2f1",
-          },
-        }}
-        onClick={() => {
-          handleBetAmount(1000);
-          setActiveBetAmount(1000);
-        }}
-      >
-        {"1000"}
-      </Button>
+  </Grid>
+
+  {/* Bet Amount Buttons */}
+  <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
+    <Box sx={{ display: "flex", gap: "5px" }}>
+      {[1, 10, 100, 1000].map((amount) => (
+        <Button
+          key={amount}
+          sx={{
+            minWidth: "40px",
+            height: "25px",
+            padding: "2px 4px",
+            fontSize: "0.75rem",
+            backgroundColor: activeBetAmount === amount ? selectedColor : "#f2f2f1",
+            color: activeBetAmount === amount ? "white" : "#666",
+            "&:hover": {
+              backgroundColor: activeBetAmount === amount ? selectedColor : "#f2f2f1",
+            },
+          }}
+          onClick={() => {
+            handleBetAmount(amount);
+            setActiveBetAmount(amount);
+          }}
+        >
+          {amount}
+        </Button>
+      ))}
     </Box>
   </Grid>
+
+  {/* Quantity Section */}
+  <Grid item xs={6} mt={2}>
+    <Typography
+      variant="h6"
+      sx={{ color: "#666", fontSize: "1rem" }}
+    >
+      Quantity
+    </Typography>
+  </Grid>
+
+  {/* Quantity Controls */}
+  <Grid item xs={6} mt={2} sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+    <IconButton onClick={() => setMultiplier(multiplier > 1 ? multiplier - 1 : 1)}>
+      <RemoveIcon fontSize="small" sx={{ color: selectedColor, fontSize: 30 }} />
+    </IconButton>
+
+    <TextField
+      value={multiplier}
+      onChange={(e) => {
+        const value = e.target.value;
+        if (/^\d*$/.test(value)) {
+          setMultiplier(value === "" ? "" : Math.max(1, Number(value)));
+        }
+      }}
+      sx={{
+        width: "50px",
+        textAlign: "center",
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "4px",
+          backgroundColor: "white",
+          color: "#666",
+          textAlign: "center",
+          fontSize: "1rem",
+          "& input": {
+            textAlign: "center",
+            padding: "4px 8px",
+          },
+        },
+      }}
+      variant="outlined"
+      inputProps={{ min: 1, style: { textAlign: "center" } }}
+    />
+
+    <IconButton onClick={() => setMultiplier(multiplier + 1)}>
+      <AddIcon fontSize="small" sx={{ color: selectedColor, fontSize: 30 }} />
+    </IconButton>
+  </Grid>
+
+  {/* Multiplier Buttons */}
+  <Grid item xs={12} mt={2}>
+    <Grid container justifyContent="flex-end" sx={{ color: "#666" }}>
+      {[1, 5, 10, 20, 50, 100].map((mult) => (
+        <div
+          key={mult}
+          className={`button ${activeButton === mult ? "active" : ""}`}
+          onClick={() => {
+            handleMultiplier(mult);
+            setActiveButton(mult);
+          }}
+          style={
+            activeButton === mult
+              ? { backgroundColor: selectedColor, color: "white" }
+              : { backgroundColor: "#f2f2f1", color: "#666" }
+          }
+        >
+          X{mult}
+        </div>
+      ))}
+    </Grid>
+  </Grid>
 </Grid>
-                <Grid item xs={12} mt={2}>
-                  <Grid container>
-                    <Grid
-                      item
-                      container
-                      direction="row"
-                      justifyContent="space-between"
-                      align="center"
-                      alignItems="center"
-                    >
-                      <Typography
-                        variant="h6"
-                        sx={{ color: "#666", fontSize: "1rem" }}
-                      >
-                        Add your money
-                      </Typography>
-                      <Grid justifyContent="flex-end">
-                        <TextField
-                          label="Add custom amount"
-                          variant="outlined"
-                          value={customBetAmount}
-                          onChange={handleCustomBetChange}
-                          style={{
-                            height: 40, // Reduced from 50
-                            backgroundColor: "#f2f2f1",
-                            color: "#666",
-                            fontSize: "14px", // Added font size
-                          }}
-                          InputProps={{
-                            style: {
-                              color: "#666",
-                              height: 40, // Reduced from 50
-                              fontSize: "14px", // Added font size
-                              padding: "4px 10px", // Added padding
-                            },
-                          }}
-                          InputLabelProps={{
-                            style: {
-                              color: "#666",
-                              fontSize: "12px", // Added smaller font size for label
-                            },
-                          }}
-                          size="small" // Added size prop for more compact look
-                        />
-                      </Grid>
-                      <Grid item xs={12} mt={2}>
-                        <Grid
-                          container
-                          alignItems="center"
-                          justifyContent="space-between"
-                          sx={{}}
-                        >
-                          <Typography
-                            variant="h6"
-                            sx={{ color: "#666", fontSize: "1rem" }}
-                          >
-                            Quantity
-                          </Typography>
-                          <Grid
-                            item
-                            container
-                            xs={6}
-                            justifyContent="flex-end"
-                            alignItems="center"
-                            spacing={1}
-                          >
-                            <Grid item>
-                              <IconButton
-                                onClick={() =>
-                                  setMultiplier(
-                                    multiplier > 1 ? multiplier - 1 : 1
-                                  )
-                                }
-                                sx={{
-                                  color: "white",
-                                  "&:hover": {},
-                                  padding: "4px",
-                                }}
-                              >
-                                <RemoveIcon
-                                  fontSize="small"
-                                  sx={{ color: selectedColor, fontSize: 30 }}
-                                />
-                              </IconButton>
-                            </Grid>
-                            <Grid item>
-                              <Typography
-                                variant="body1"
-                                sx={{
-                                  border: `1px solid ${selectedColor}`,
-                                  borderRadius: "4px",
-                                  padding: "4px 12px",
-                                  backgroundColor: "white",
-                                  color: "#666",
-                                  minWidth: "40px",
-                                  textAlign: "center",
-                                }}
-                              >
-                                {multiplier}
-                              </Typography>
-                            </Grid>
-                            <Grid item>
-                              <IconButton
-                                onClick={() => setMultiplier(multiplier + 1)}
-                                sx={{
-                                  color: "white",
-                                  "&:hover": {},
-                                  padding: "4px",
-                                }}
-                              >
-                                <AddIcon
-                                  fontSize="small"
-                                  sx={{ color: selectedColor, fontSize: 30 }}
-                                />
-                              </IconButton>
-                            </Grid>
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={12} mt={2}>
-                  <Grid
-                    container
-                    justifyContent="flex-end"
-                    sx={{ color: "#666" }}
-                  >
-                    <div
-                      className={`button ${activeButton === 1 ? "active" : ""}`}
-                      onClick={() => {
-                        handleMultiplier(1);
-                        setActiveButton(1);
-                      }}
-                      style={
-                        activeButton === 1
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X1
-                    </div>
-                    <div
-                      className={`button ${activeButton === 5 ? "active" : ""}`}
-                      onClick={() => {
-                        handleMultiplier(5);
-                        setActiveButton(5);
-                      }}
-                      style={
-                        activeButton === 5
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X5
-                    </div>
-                    <div
-                      className={`button ${
-                        activeButton === 10 ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        handleMultiplier(10);
-                        setActiveButton(10);
-                      }}
-                      style={
-                        activeButton === 10
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X10
-                    </div>
-                    <div
-                      className={`button ${
-                        activeButton === 20 ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        handleMultiplier(20);
-                        setActiveButton(20);
-                      }}
-                      style={
-                        activeButton === 20
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X20
-                    </div>
-                    <div
-                      className={`button ${
-                        activeButton === 50 ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        handleMultiplier(50);
-                        setActiveButton(50);
-                      }}
-                      style={
-                        activeButton === 50
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X50
-                    </div>
-                    <div
-                      className={`button ${
-                        activeButton === 100 ? "active" : ""
-                      }`}
-                      onClick={() => {
-                        handleMultiplier(100);
-                        setActiveButton(100);
-                      }}
-                      style={
-                        activeButton === 100
-                          ? { backgroundColor: selectedColor, color: "white" }
-                          : { backgroundColor: "#f2f2f1", color: "#666" }
-                      }
-                    >
-                      X100
-                    </div>
-                  </Grid>
-                </Grid>
-              </Grid>
+
+
+<FormControlLabel
+      control={
+        <Radio
+          checked={agree}
+          onChange={() => setAgree(!agree)}
+          icon={<RadioButtonUncheckedIcon />}
+          checkedIcon={<CheckCircleIcon sx={{ color: "#4caf50" }} />} // Green check when selected
+        />
+      }
+      label="I Agree"
+      sx={{ color: "#666", fontSize: "1rem",marginLeft:1}}
+    />
+
+
 
               <Grid item xs={12} mt={2}>
                 <Grid container justifyContent="space-around" spacing={0}>
@@ -1860,7 +2073,7 @@ const Head = ({ timerKey }) => {
                       fullWidth
                       style={{ background: selectedColor }}
                       variant="contained"
-                    >{`Total Bet: ${betAmount * multiplier}`}</Button>
+                    >{`Total Amount: ${betAmount * multiplier}`}</Button>
                   </Grid>
                 </Grid>
               </Grid>

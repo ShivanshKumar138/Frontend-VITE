@@ -601,7 +601,7 @@ const handleItemClick = useCallback((path) => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      p: 1,
+      p: 0,
       borderRadius: 3,
       position: "relative", // Needed for overlay positioning
       background: "rgb(246,148,114)",
@@ -669,7 +669,7 @@ const handleItemClick = useCallback((path) => {
       <Box
         onClick={() => handleTabClick(index + 6)}
         sx={{
-          width:155,
+          width:165,
           height: 65,
           display: "flex",
           flexDirection: "column",
