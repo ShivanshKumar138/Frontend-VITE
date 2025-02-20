@@ -21,6 +21,8 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import { FormControlLabel, Radio } from "@mui/material";
 // import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import { DialogActions} from "@mui/material";
+
 import "../App.css";
 import axios from "axios";
 import {
@@ -124,6 +126,9 @@ const multipliers = [
 ];
 
 const Head = ({ timerKey }) => {
+
+
+
   const [agree, setAgree] = useState(false);
   const [activeId, setActiveId] = useState(images[0].id);
   const [selectedTimer, setSelectedTimer] = useState("1Min");
@@ -167,8 +172,17 @@ const Head = ({ timerKey }) => {
   const [animatedIndex, setAnimatedIndex] = useState(null);
   const [isRandomizing, setIsRandomizing] = useState(false);
   const [selectedMultiplier, setSelectedMultiplier] = useState(1);
+  const backgroundImage = gameResult === "Succeed"
+    ? "../../assets/images/missningBg-6f17b242.png"
+    : "../../assets/images/missningLBg-73e02111.png";
 
+
+  const text=gameResult==="Succeed"?"Congratulations":"Sorry"
   const navigate = useNavigate();
+
+  const handleClose=()=>{
+    setOpen(false);
+  }
 
   // Handles the random selection animation
   const handleRandomSelection = () => {
@@ -687,14 +701,14 @@ const Head = ({ timerKey }) => {
 
       announceBetResult();
 
-      const timer = setTimeout(() => {
-        setOpen(false);
-        setTimeout(() => {
-          setCurrentBetIndex((prevIndex) => prevIndex + 1);
-        }, 1000);
-      }, 2500);
+      // const timer = setTimeout(() => {
+      //   setOpen(false);
+      //   setTimeout(() => {
+      //     setCurrentBetIndex((prevIndex) => prevIndex + 1);
+      //   }, 100000);
+      // }, 2500);
 
-      return () => clearTimeout(timer);
+      // return () => clearTimeout(timer);
     } else {
       console.log(
         "No popup to show, either popupQueue is empty or currentBetIndex exceeds queue length."
@@ -2439,7 +2453,88 @@ const Head = ({ timerKey }) => {
             {/* ...rest of the code... */}
 
 
-            <div
+            {/* <div
+              style={{
+                display: open ? "block" : "none", 
+                position: "absolute",
+                zIndex: 2000,
+                left: 10,
+                top: "120px",
+                width: "100%",
+                height: "100%",
+                overflow: "auto",
+                border: "none",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "transparent",
+                  margin: "15% auto",
+                  padding: 20,
+                  width: "75%",
+                  height: "55%",
+                  backgroundImage: `url(${
+                    gameResult === "Succeed"
+                      ? "../../assets/images/missningBg-6f17b242.png"
+                      : "../../assets/images/missningLBg-73e02111.png"
+                  })`,
+                  backgroundSize: "100% 100%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  variant="h4"
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    marginTop: "7rem",
+                  }}
+                >
+                  {gameResult === "Succeed" ? "Congratulationsssss" : "Sorryyyyy"}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{ color: "white", marginBottom: "1rem" }}
+                >
+                  Lottery results {popupresult}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  mb={5}
+                  mt={5}
+                >
+                  {dialogContent}
+                  <br />
+                  <span
+                    style={{
+                      color: gameResult === "Succeed" ? "green" : "red",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    ₹{parseFloat(winloss).toFixed(2)}
+                  </span>
+
+                  <br />
+                  <span style={{ fontSize: "0.85rem", fontWeight: "bold" }}>
+                    Period: Win {popupTimer}
+                  </span>
+                  <br />
+                  <span style={{ fontSize: "1rem", fontWeight: "bold" }}>
+                    {popupperiodid}
+                  </span>
+                </Typography>
+                <Button onClick={() => setOpen(false)}>Close</Button>
+              </div>
+            </div> */}
+
+{/* <div
+
               style={{
                 display: open ? "block" : "none", 
                 position: "absolute",
@@ -2517,7 +2612,222 @@ const Head = ({ timerKey }) => {
                 </Typography>
                 <Button onClick={() => setOpen(false)}>Close</Button>
               </div>
-            </div>
+            </div> */}
+
+
+<div
+  style={{
+    display: open ? "block" : "none",
+    position: "absolute",
+    zIndex: 2000,
+    left: 10,
+    top: "120px",
+    width: "100%",
+    height: "100%",
+    overflow: "auto",
+    border: "none",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "transparent",
+      margin: "15% auto",
+      padding: 5,
+      width: "65%",
+      height: "55%",
+      backgroundImage: `url(${
+        gameResult === "Succeed"
+          ? "../../assets/images/missningBg-6f17b242.png"
+          : "../../assets/images/missningLBg-73e02111.png"
+      })`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <br />
+    <br />
+    <br/>
+    <br/>
+    {/* Main Title */}
+    <Typography
+      variant="h5"
+      style={{
+        color: "#fff",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: "0",
+        marginBottom:"30px"
+      }}
+    >
+      {gameResult === "Succeed" ? "Congratulations" : "Sorry"}
+    </Typography>
+
+    {/* Lottery Results Section */}
+    <div
+      style={{
+        display: "flex",
+        gap: "10px",
+        marginTop: "3px",
+        alignItems: "center",
+      }}
+    >
+
+      {/* Lottery Result Tags */}
+      <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    background: "transparent", // Smooth gradient background
+    padding: "4px 10px",
+    borderRadius: "20px",
+  }}
+>
+  <Typography
+    variant="body1"
+    style={{
+      color: "#fff",
+      fontWeight: "normal",
+      fontSize: "10px",
+    }}
+  >
+    Lottery results
+  </Typography>
+
+  {/* "Red" Tag */}
+  <div
+    style={{
+      background: "transparent",
+      border: "2px solid white",
+      padding: "4px 12px",
+      borderRadius: "20px",
+      color: "#fff",
+      fontWeight: "normal",
+      fontSize: "10px",
+      textAlign: "center",
+      minWidth: "20px",
+    }}
+  >
+    Red
+  </div>
+
+  {/* Number Circle */}
+  <div
+    style={{
+      background: "transparent",
+      border: "2px solid white",
+      padding: "2px 7px",
+      borderRadius: "50%",
+      color: "#fff",
+      fontWeight: "normal",
+      fontSize: "14px",
+      textAlign: "center",
+      minWidth: "5px",
+    }}
+  >
+    8
+  </div>
+
+  {/* "Big" Tag */}
+  <div
+    style={{
+      background: "transparent",
+      border: "2px solid white",
+      padding: "4px 12px",
+      borderRadius: "20px",
+      color: "#fff",
+      fontWeight: "normal",
+      fontSize: "10px",
+      textAlign: "center",
+      minWidth: "20px",
+    }}
+  >
+    Big
+  </div>
+</div>
+    </div>
+
+    {/* Ticket Style for Bonus Amount */}
+    <br/>
+    <br />
+    <Typography
+      variant="h7"
+      style={{
+        color: gameResult === "Succeed" ? "#28a745" : "#dc3545",
+        fontWeight: "bold",
+      }}
+    >
+      {gameResult === "Succeed" ? "Bonus" : "Lose"}
+    </Typography>
+
+    <Typography
+      variant="h7"
+      style={{
+        color: gameResult === "Succeed" ? "#28a745" : "#dc3545",
+        fontWeight: "bold",
+        margin: "1px 0",
+      }}
+    >
+      ₹{parseFloat(winloss).toFixed(2)}
+    </Typography>
+
+    <Typography variant="body2" style={{ fontSize: "12px", fontWeight: "normal" }}>
+      Period: {popupTimer} {popupperiodid}
+    </Typography>
+
+    {/* Close Button */}
+    <br/>
+    <div
+          style={{
+            backgroundColor: "transparent",
+            color: "white",
+            marginTop: "10px",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+            padding: "8px 20px",
+            fontSize: "16px",
+          }}
+        >
+          <CheckCircleIcon
+            style={{
+              color: "#fff", // White Check Icon
+              fontSize: "10px",
+            }}
+          />
+          <Typography
+            variant="body2"
+            style={{
+              fontSize: "10px",
+              fontWeight: "bold",
+              color: "#ffffff",
+            }}
+          >
+            Auto close in 3 sec
+          </Typography>
+        </div>
+  </div>
+  <Button
+      onClick={() => setOpen(false)}
+      style={{
+        backgroundColor: "#007bff",
+        color: "white",
+        marginTop: "0px",
+        padding: "8px 20px",
+        fontSize: "16px",
+      }}
+    >
+      Close
+    </Button>
+</div>
+
+
+            
           </>
         </div>
         <br />
@@ -2529,3 +2839,6 @@ const Head = ({ timerKey }) => {
 };
 
 export default Head;
+
+
+

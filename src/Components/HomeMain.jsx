@@ -450,7 +450,7 @@ const Home = ({ children }) => {
   return (
     <div style={{ position: "relative" }}>
       <Mobile>
-        {/* <h1>HEy</h1> */}
+  
         {/* Other content */}
         <Box
           display="flex"
@@ -483,7 +483,7 @@ const Home = ({ children }) => {
     top: 0,
     zIndex: 1000,
     backgroundColor: "#4781FF",
-    padding: "2px 6px",
+    padding: "0px 1px",
     color: "white",
   }}
 >
@@ -492,7 +492,7 @@ const Home = ({ children }) => {
     <img
       src="/assets/greenlogo.png"
       alt="logo"
-      style={{ width: "140px", height: "50px" }}
+      style={{ width: "140px", height: "45px" }}
     />
   </Grid>
 
@@ -541,7 +541,6 @@ const Home = ({ children }) => {
 
 
             {/* //content */}
-
             <Header>
               <ImageWrapper>
                 <img
