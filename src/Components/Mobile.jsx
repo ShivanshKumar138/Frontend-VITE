@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, useMediaQuery, IconButton } from "@mui/material";
 import Draggable from "react-draggable";
+import { useLocation } from "react-router-dom";
 
 const Mobile = ({ children }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 20 });
+  const location = useLocation();
 
   useEffect(() => {
     // Disable scrolling on the document body
@@ -41,6 +43,8 @@ const Mobile = ({ children }) => {
     setPosition(newPosition);
     localStorage.setItem('chatButtonPosition', JSON.stringify(newPosition));
   };
+
+  const showDraggable = ["/home", "/login", "/register"].includes(location.pathname);
 
   return (
     <Box
@@ -79,37 +83,38 @@ const Mobile = ({ children }) => {
         >
           {children}
         </Box>
-        <Draggable
-          position={position}
-          onStart={() => setIsDragging(false)}
-          onDrag={() => setIsDragging(true)}
-          onStop={handleDragStop}
-        >
-          <Box
-            position="absolute"
-            bottom={82}
-            right={32}
-            zIndex={1000}
+        {showDraggable && (
+          <Draggable
+            position={position}
+            onStart={() => setIsDragging(false)}
+            onDrag={() => setIsDragging(true)}
+            onStop={handleDragStop}
           >
-             <IconButton
-              color="primary"
-              onClick={handleClick2}
-              onTouchEnd={handleClick}
+            
+            <Box
+              position="absolute"
+              bottom={82}
+              right={32}
+              zIndex={1000}
             >
-              <img src="https://goagameb.com/assets/png/tg_bg-37fa3454.png" style={{width:"60px",height:"60px"}}/>
-              
-            </IconButton>
-            <br></br>
-            <IconButton
-              color="primary"
-              onClick={handleClick}
-              onTouchEnd={handleClick}
-            >
-              
-              <img src="/assets/slot/chat.png" alt="Customer Care" style={{ width: 60, height: 60 }} />
-            </IconButton>
-          </Box>
-        </Draggable>
+              <IconButton
+                color="primary"
+                onClick={handleClick2}
+                onTouchEnd={handleClick}
+              >
+                <img src="https://goagameb.com/assets/png/tg_bg-37fa3454.png" style={{width:"60px",height:"60px"}}/>
+              </IconButton>
+              <br></br>
+              <IconButton
+                color="primary"
+                onClick={handleClick}
+                onTouchEnd={handleClick}
+              >
+                <img src="/assets/slot/chat.png" alt="Customer Care" style={{ width: 60, height: 60 }} />
+              </IconButton>
+            </Box>
+          </Draggable>
+        )}
       </Container>
     </Box>
   );

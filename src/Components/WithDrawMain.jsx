@@ -558,7 +558,7 @@ const WithDrawMain = ({ children }) => {
           height="calc(var(--vh, 1vh) * 100)"
           position="relative"
         >
-          <Box flexGrow={1} backgroundColor="#380003">
+          <Box flexGrow={1} backgroundColor="#F7F8FF">
             <Grid
               container
               alignItems="center"
@@ -567,9 +567,9 @@ const WithDrawMain = ({ children }) => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                backgroundColor: "#a50000",
+                backgroundColor: "#FFFFFF",
                 padding: "7px 4px",
-                color: "#e4911d",
+                color: "#1e2637",
               }}
             >
               <Grid item container alignItems="center" justifyContent="center">
@@ -585,7 +585,7 @@ const WithDrawMain = ({ children }) => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 3,
@@ -598,7 +598,7 @@ const WithDrawMain = ({ children }) => {
                   <Typography
                     variant="caption"
                     sx={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       fontSize: "12px",
                       flexGrow: 1,
                     }}
@@ -614,15 +614,15 @@ const WithDrawMain = ({ children }) => {
               container
               mt={1}
               style={{
+                backgroundImage: `url('https://goagamea.com/assets/png/TotalAssetsBg-a5e1f70e.png')`,
                 borderRadius: 8,
-                padding: 2,
+                padding: 8,
                 backgroundSize: "cover",
-                // backgroundImage: `url('assets/greencard.png')`,
-                background: "#720811",
-                width: "97%",
-                marginLeft: "auto",
+                width: "95%",
+                marginLeft: "auto", 
                 marginRight: "auto",
-                height: "150px",
+                height: "140px",
+                marginTop: "1rem",
               }}
             >
               <Grid container item alignItems="center" mt={1}>
@@ -636,7 +636,7 @@ const WithDrawMain = ({ children }) => {
                 <Grid item xs={10}>
                   <Typography
                     fontSize="15px"
-                    sx={{ color: "#e4911d", marginRight: "15px" }}
+                    sx={{ color: "white", marginRight: "15px" }}
                     align="left"
                   >
                     Available Balance
@@ -656,7 +656,7 @@ const WithDrawMain = ({ children }) => {
                 >
                   <Typography
                     fontSize="20px"
-                    sx={{ color: "#e4911d", fontWeight: "bold" }}
+                    sx={{ color: "white", fontWeight: "bold" }}
                   >
                     ₹{user ? user.walletAmount.toFixed(2) : "Loading.."}
                   </Typography>
@@ -691,7 +691,7 @@ const WithDrawMain = ({ children }) => {
                       withdrawalMethod === "Bank Card" ? "#ffffff" : "black",
                     borderRadius: 8,
                     padding: 16,
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                   
                   }}
                 >
                   <img
@@ -725,7 +725,7 @@ const WithDrawMain = ({ children }) => {
                     color: withdrawalMethod === "USDT" ? "#ffffff" : "black",
                     borderRadius: 8,
                     padding: 16,
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                    
                     cursor: "pointer", // To show the clickable cursor
                   }}
                 >
@@ -772,7 +772,7 @@ const WithDrawMain = ({ children }) => {
                       justifyContent: "space-between",
                       padding: "8px 16px",
                       borderRadius: "8px",
-                      boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+                   
                       width: "100%",
                       height: "100%", // Ensure Card takes full height of the parent
                       margin: "0 auto",
@@ -864,7 +864,7 @@ const WithDrawMain = ({ children }) => {
                 style={{
                   width: "95%",
                   margin: "20px auto",
-                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                 
                   backgroundColor: "#ffffff",
                   borderRadius: "10px",
                   padding: "10px",
@@ -914,7 +914,7 @@ const WithDrawMain = ({ children }) => {
                     width: "95%",
                     // marginLeft: "20px",
                     margin: "1rem auto",
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                  
                     backgroundColor: "#ffffff",
                     borderRadius: "8px",
                   }}
@@ -957,8 +957,8 @@ const WithDrawMain = ({ children }) => {
               sx={{
                 width: "95%",
                 margin: "0 auto",
-                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-                backgroundColor: "#720811",
+             
+                backgroundColor: "#FFFFFF",
                 borderRadius: "10px",
                 padding: "15px",
               }}
@@ -1020,7 +1020,7 @@ const WithDrawMain = ({ children }) => {
                       <Typography
                         variant="body2"
                         align="left"
-                        sx={{ color: "#e4911d" }}
+                        sx={{ color: "#768096" }}
                       >
                         Minimum Amount: ₹
                         {withdrawData ? withdrawData.minWithdrawAmount : "N/A"}
@@ -1028,7 +1028,7 @@ const WithDrawMain = ({ children }) => {
                       <Typography
                         variant="body2"
                         align="left"
-                        sx={{ color: "#e4911d" }}
+                        sx={{ color: "#768096" }}
                       >
                         Maximum Amount: ₹
                         {withdrawData ? withdrawData.maxWithdrawAmount : "N/A"}
@@ -1036,7 +1036,7 @@ const WithDrawMain = ({ children }) => {
                     </Grid>
                     <Grid item xs={3}>
                       <Typography variant="body2" align="right">
-                        <span style={{ color: "rgb(221,145,56)" }}>
+                        <span style={{ color: "#768096" }}>
                           {" "}
                           Amount:{" "}
                         </span>
@@ -1051,26 +1051,25 @@ const WithDrawMain = ({ children }) => {
 
                   {/* Withdraw Button */}
                   <Grid item xs={12}>
-                    <Button
-                      fullWidth
-                      variant="contained"
-                      sx={{
-                        mt: 2,
-                        background:
-                          "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
-                        "&:hover": {
-                          background:
-                            "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
-                        },
-                        borderRadius: "20px",
-                        color: "white",
-
-                      }}
-                      onClick={handleWithdraw}
-                      disabled={!withdrawalAmount || !withdrawalMethod}
-                    >
-                      Withdraw
-                    </Button>
+                  <Button
+  fullWidth
+  variant="contained"
+  sx={{
+    mt: 2,
+    background:
+      "linear-gradient(180deg, #4A89FF 0%, #4A89FF 30%, #4A89FF 100%)",
+    "&:hover": {
+      background:
+        "linear-gradient(180deg, #4A89FF 0%, #4A89FF 30%, #4A89FF 100%)",
+    },
+    borderRadius: "20px",
+    color: "white", // Ensure text color is white
+  }}
+  onClick={handleWithdraw}
+  disabled={!withdrawalAmount || !withdrawalMethod}
+>
+  Withdraw
+</Button>
                   </Grid>
                 </>
               )}
@@ -1246,10 +1245,10 @@ const WithDrawMain = ({ children }) => {
                       variant="contained"
                       sx={{
                         background:
-                          "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                          "linear-gradient(180deg, #3F88FF 0%, #3F88FF 30%,#3F88FF 100%)",
                         "&:hover": {
                           background:
-                            "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                            "linear-gradient(180deg, #3F88FF 0%, #3F88FF 30%, #3F88FF 100%)",
                         },
                       }}
                       onClick={handleWithdraw}
@@ -1631,10 +1630,10 @@ const WithDrawMain = ({ children }) => {
                     textTransform: "initial",
                     borderRadius: "20px",
                     background:
-                      "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                      "linear-gradient(180deg, #3F88FF 0%, #3F88FF 30%, #3F88FF 100%)",
                     "&:hover": {
                       background:
-                        "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                        "linear-gradient(180deg, #3F88FF 0%,#3F88FF 30%, #3F88FF 100%)",
                     },
                   }}
                 >

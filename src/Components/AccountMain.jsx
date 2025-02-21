@@ -21,7 +21,7 @@ const ImageSubtitleGrid = ({ imageSrc, subtitle1, subtitle2, onClick }) => (
     container
     onClick={onClick}
     sx={{
-      backgroundColor: "#720811",
+      backgroundColor: "#FFFFFF",
       boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
       width: "100%",
       height: "80%",
@@ -32,6 +32,7 @@ const ImageSubtitleGrid = ({ imageSrc, subtitle1, subtitle2, onClick }) => (
       mb: 0,
       overflow: "hidden",
       cursor: "pointer",
+      boxShadow:"none"
     }}
   >
     <Grid
@@ -58,7 +59,7 @@ const ImageSubtitleGrid = ({ imageSrc, subtitle1, subtitle2, onClick }) => (
     >
       <Typography
         sx={{
-          color: "#e4911d",
+          color: "#1e2637",
           fontSize: "0.95rem",
           mb: 0.5, // Space between title and subtitle
         }}
@@ -67,7 +68,7 @@ const ImageSubtitleGrid = ({ imageSrc, subtitle1, subtitle2, onClick }) => (
       </Typography>
       <Typography
         sx={{
-          color: "white",
+          color: "#768096",
           fontSize: "0.75rem", // Adjusted for better readability
         }}
       >
@@ -278,12 +279,12 @@ const AccountMain = ({ children }) => {
             },
           }}
         >
-          <Box flexGrow={1}sx={{ backgroundColor: "#380003"}}>
+          <Box flexGrow={1}sx={{ backgroundColor: "#F7F8FF"}}>
             <Grid
               container
               sx={{
                 background:
-                  "#380003",
+                  "#57AAFF",
                 borderRadius: "0 0 20px 20px",
                 padding: "20px",
               }}
@@ -350,7 +351,7 @@ const AccountMain = ({ children }) => {
                     borderRadius: "25px",
                     padding: "2px 4px",
 
-                    backgroundColor: "rgb(221,144,56)",
+                    backgroundColor: "#FEAA57",
                     width: { xs: '55%', sm: '55%', md: '55%' },
                     display: 'flex',
                     alignItems: 'center',
@@ -437,24 +438,25 @@ const AccountMain = ({ children }) => {
               ></Grid>
             </Grid>
 
-            <div style={{ position: "relative", marginTop: "-20%", zIndex: 1 }}>
+            <div style={{ position: "relative", marginTop: "-20%", zIndex: 1}}>
               <Grid
                 container
                 sx={{
-                  backgroundColor: "#720811",
+                  backgroundColor: "#FFFFFF",
                   padding: "20px",
                   borderRadius: "12px",
                   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                   marginLeft: "auto",
                   marginRight: "auto",
-                  maxWidth: "95%", // Decreased width
+                  maxWidth: "95%", 
+                  boxShadow: "none",
                 }}
               >
                 <Grid item xs={12}>
                   <Typography
                     variant="h6"
                     align="left"
-                    sx={{ color: "#e4911d", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                    sx={{ color: "#768096", fontSize: "15px", fontFamily: 'helvetica', fontWeight: 400 }}
                   >
                     Total Balance
                   </Typography>
@@ -465,17 +467,13 @@ const AccountMain = ({ children }) => {
                     variant="caption"
                     align="center"
                     sx={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       fontWeight: "bold",
-                      fontSize: "20px",
+                      fontSize: "19px",
                     }}
                   >
                     {`\u20B9${user ? user.walletAmount.toFixed(2) : "Loading"}`}
-                    <IconButton onClick={handleRefresh}>
-                      <AutorenewIcon
-                        style={{ color: "white", width: "20", height: "20" }}
-                      />
-                    </IconButton>
+                   <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" data-v-7d799898="" class="svg-icon icon-refreshBalance" width="20" height="20" style={{marginLeft:"10px"}} viewBox="0 0 40 40"><defs><symbol id="icon-refreshBalance" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 42" fill="none">  <path fill-rule="evenodd" clip-rule="evenodd" d="M40.3353 19.3759C40.8118 19.7572 40.889 20.4525 40.5078 20.929L35.3979 27.1654C34.6613 27.902 32.8157 28.1662 31.7148 27.1654L25.8086 21.0111C25.3571 20.6006 25.3238 19.9018 25.7343 19.4503C26.1448 18.9987 26.8436 18.9655 27.2951 19.3759L33.3342 25.7318C33.4915 25.8747 33.7368 25.8553 33.8696 25.6893L38.7822 19.5485C39.1634 19.072 39.8588 18.9947 40.3353 19.3759Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5563 26.4288C34.1666 26.4288 34.6613 25.9341 34.6613 25.3239V17.5894C34.6613 12.7075 30.7037 8.75 25.8219 8.75H10.7212C10.111 8.75 9.6163 9.24469 9.6163 9.85493C9.6163 10.4652 10.111 10.9599 10.7212 10.9599H25.8219C29.4833 10.9599 32.4514 13.928 32.4514 17.5894V25.3239C32.4514 25.9341 32.9461 26.4288 33.5563 26.4288Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66472 23.0877C2.18821 22.7064 2.11095 22.0111 2.49216 21.5346L7.60211 15.2982C8.33873 14.5616 10.1843 14.2974 11.2852 15.2982L17.1914 21.4525C17.6429 21.863 17.6762 22.5618 17.2657 23.0133C16.8552 23.4649 16.1564 23.4981 15.7049 23.0877L9.66577 16.7318C9.5085 16.5889 9.2632 16.6083 9.13042 16.7743L4.21777 22.9151C3.83656 23.3916 3.14124 23.4689 2.66472 23.0877Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.44366 16.0348C8.83342 16.0348 8.33873 16.5295 8.33873 17.1397V24.8742C8.33873 29.7561 12.2963 33.7136 17.1781 33.7136H32.2788C32.889 33.7136 33.3837 33.2189 33.3837 32.6087C33.3837 31.9984 32.889 31.5037 32.2788 31.5037H17.1781C13.5167 31.5037 10.5486 28.5356 10.5486 24.8742V17.1397C10.5486 16.5295 10.0539 16.0348 9.44366 16.0348Z" fill="#A3A3A3"></path></symbol></defs><g>  <path fill-rule="evenodd" clip-rule="evenodd" d="M40.3353 19.3759C40.8118 19.7572 40.889 20.4525 40.5078 20.929L35.3979 27.1654C34.6613 27.902 32.8157 28.1662 31.7148 27.1654L25.8086 21.0111C25.3571 20.6006 25.3238 19.9018 25.7343 19.4503C26.1448 18.9987 26.8436 18.9655 27.2951 19.3759L33.3342 25.7318C33.4915 25.8747 33.7368 25.8553 33.8696 25.6893L38.7822 19.5485C39.1634 19.072 39.8588 18.9947 40.3353 19.3759Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5563 26.4288C34.1666 26.4288 34.6613 25.9341 34.6613 25.3239V17.5894C34.6613 12.7075 30.7037 8.75 25.8219 8.75H10.7212C10.111 8.75 9.6163 9.24469 9.6163 9.85493C9.6163 10.4652 10.111 10.9599 10.7212 10.9599H25.8219C29.4833 10.9599 32.4514 13.928 32.4514 17.5894V25.3239C32.4514 25.9341 32.9461 26.4288 33.5563 26.4288Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.66472 23.0877C2.18821 22.7064 2.11095 22.0111 2.49216 21.5346L7.60211 15.2982C8.33873 14.5616 10.1843 14.2974 11.2852 15.2982L17.1914 21.4525C17.6429 21.863 17.6762 22.5618 17.2657 23.0133C16.8552 23.4649 16.1564 23.4981 15.7049 23.0877L9.66577 16.7318C9.5085 16.5889 9.2632 16.6083 9.13042 16.7743L4.21777 22.9151C3.83656 23.3916 3.14124 23.4689 2.66472 23.0877Z" fill="#A3A3A3"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.44366 16.0348C8.83342 16.0348 8.33873 16.5295 8.33873 17.1397V24.8742C8.33873 29.7561 12.2963 33.7136 17.1781 33.7136H32.2788C32.889 33.7136 33.3837 33.2189 33.3837 32.6087C33.3837 31.9984 32.889 31.5037 32.2788 31.5037H17.1781C13.5167 31.5037 10.5486 28.5356 10.5486 24.8742V17.1397C10.5486 16.5295 10.0539 16.0348 9.44366 16.0348Z" fill="#A3A3A3"></path></g></svg>
                   </Typography>
                 </Grid>
 
@@ -496,7 +494,7 @@ const AccountMain = ({ children }) => {
                       <Typography
                         variant="subtitle2"
                         align="center"
-                        sx={{ color: "white", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                        sx={{ color: "#1e2637", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
                       >
                         Wallet
                       </Typography>
@@ -513,7 +511,7 @@ const AccountMain = ({ children }) => {
                       <Typography
                         variant="subtitle2"
                         align="center"
-                        sx={{ color: "white", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                        sx={{ color: "#1e2637", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
                       >
                         Deposit
                       </Typography>
@@ -530,7 +528,7 @@ const AccountMain = ({ children }) => {
                       <Typography
                         variant="subtitle2"
                         align="center"
-                        sx={{ color: "white", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                        sx={{ color: "#1e2637", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
                       >
                         Withdraw
                       </Typography>
@@ -547,7 +545,7 @@ const AccountMain = ({ children }) => {
                       <Typography
                         variant="subtitle2"
                         align="center"
-                        sx={{ color: "white", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                        sx={{ color: "#1e2637", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
                       >
                         VIP
                       </Typography>
@@ -607,12 +605,11 @@ const AccountMain = ({ children }) => {
 
             <MenuList
               sx={{
-                backgroundColor: "#720811",
+                backgroundColor: "#FFFFFF",
                 borderRadius: "8px",
                 marginLeft: "auto",
                 marginRight: "auto",
                 width: "94%",
-                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
               }}
             >
               {options.map((option, index) =>
@@ -629,15 +626,15 @@ const AccountMain = ({ children }) => {
                     />
                     <ListItemText
                       primary={option.label}
-                      sx={{ textAlign: "left", color: "white", fontSize: "15px", fontFamily: 'helvetica', fontWeight: 400 }}
+                      sx={{ textAlign: "left", color: "#1e2637", fontSize: "15px", fontFamily: 'helvetica', fontWeight: 400 }}
                     />
                     {option.subLabel && (
                       <ListItemText
                         secondary={option.subLabel}
-                        secondaryTypographyProps={{ style: { color: "white" } }}
+                        secondaryTypographyProps={{ style: { color: "rgb(102, 102, 102)" } }}
                       />
                     )}
-                    <ArrowForwardIcon style={{ color: "white" }} />
+                    <ArrowForwardIcon style={{ color: "rgb(102, 102, 102)" }} />
                   </MenuItem>,
                   index < options.length - 1 && (
                     <Divider key={`divider-${index}`} />
@@ -651,13 +648,13 @@ const AccountMain = ({ children }) => {
               spacing={2}
               mt={2}
               sx={{
-                backgroundColor: "#720811",
+                backgroundColor: "#FFFFFF",
                 borderRadius: "8px",
                 padding: "10px",
                 marginLeft: "auto",
                 marginRight: "auto",
                 width: "93%",
-                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+             
               }}
             >
               {images.map((image, index) => (
@@ -690,7 +687,7 @@ const AccountMain = ({ children }) => {
                     <Typography
                       variant="caption"
                       align="center"
-                      sx={{ marginTop: "8px", color: "white", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
+                      sx={{ marginTop: "8px", color: "#768096", fontSize: "12px", fontFamily: 'helvetica', fontWeight: 400 }}
                     >
                       {image.caption}
                     </Typography>
@@ -703,7 +700,7 @@ const AccountMain = ({ children }) => {
               onClick={handleLogout}
               sx={{
                 width: "80%",
-                border: "1px solid #e4911d",
+                border: "1px solid #54A0FF",
                 borderRadius: "50px",
                 marginTop: "8%",
                 marginBottom: "25%",
@@ -711,12 +708,12 @@ const AccountMain = ({ children }) => {
             >
               <Grid container alignItems="center">
                 <Grid item>
-                  <ExitToAppIcon style={{ color: "#e4911d" }} />
+                  <ExitToAppIcon style={{ color: "#54A0FF" }} />
                 </Grid>
                 <Grid item xs={10}>
                   <Typography
                     variant="body1"
-                    sx={{ marginLeft: "8px", color: "#e4911d" }}
+                    sx={{ marginLeft: "8px", color: "#54A0FF" }}
                   >
                     Log Out
                   </Typography>

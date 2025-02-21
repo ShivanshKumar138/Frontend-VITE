@@ -1,6 +1,5 @@
 .transaction-card {
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-bottom: 16px;
     background-color: #ffffff;
@@ -10,12 +9,12 @@
     padding: 8px 10px;
     /* font-weight: bold; */
     text-align: left;
-    color: #ffffff;
+    color: #1e2637;
   }
   
   .transaction-body {
     padding: 10px;
-    background-color: #a50000;
+    background-color: #FFFFFF;
   }
   
   
@@ -30,13 +29,13 @@
   }
   
   .transaction-label {
-    color: white;
+    color: #1e2637;
     font-size: 0.75rem;
     font-weight: bold;
   }
   
   .transaction-value {
-    color: white;
+    color: #1e2637;
     text-align: right;
     font-size: 0.75rem;
     font-weight: bold;

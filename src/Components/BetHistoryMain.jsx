@@ -291,7 +291,7 @@ const BetHistoryMain = () => {
           height="calc(var(--vh, 1vh) * 100)"
           position="relative"
         >
-          <Box flexGrow={1} backgroundColor="#380003">
+          <Box flexGrow={1} backgroundColor="#F7F8FF">
             <Grid
               container
               alignItems="center"
@@ -300,7 +300,7 @@ const BetHistoryMain = () => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                backgroundColor: "#a50000",
+                backgroundColor: "#FFFFFF",
                 padding: "7px 4px",
                 color: "white",
               }}
@@ -308,7 +308,7 @@ const BetHistoryMain = () => {
               <Grid item container alignItems="center" justifyContent="center">
                 <Grid item xs={3}>
                   <IconButton
-                    sx={{ color: "#e4911d", mr: 8 }}
+                    sx={{ color: "#1e2637", mr: 8 }}
                     onClick={() => navigate(-1)}
                   >
                     <ArrowBackIosNewIcon sx={{ fontSize: "20px" }} />
@@ -318,7 +318,7 @@ const BetHistoryMain = () => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: " #e4911d",
+                      color: " #1e2637",
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 10,

@@ -138,7 +138,7 @@ const WithdrawHistoryMain = () => {
 
   return (
     <Mobile>
-      <Box sx={{ backgroundColor: "#380003", minHeight: "100vh" }}>
+      <Box sx={{ backgroundColor: "#F7F8FF", minHeight: "100vh" }}>
         {/* Top Bar */}
         <Grid
           container
@@ -148,7 +148,7 @@ const WithdrawHistoryMain = () => {
             position: "sticky",
             top: 0,
             zIndex: 1000,
-            backgroundColor: "#a50000",
+            backgroundColor: "#FFFFFF",
             padding: "4px 8px",
             color: "black",
           }}
@@ -156,7 +156,7 @@ const WithdrawHistoryMain = () => {
           <Grid item container alignItems="center" justifyContent="center">
             <Grid item xs={2}>
               <IconButton
-                sx={{ color: "#e4911d", ml: -5 }}
+                sx={{ color: "black", ml: -5 }}
                 onClick={handleRedirect}
               >
                 <ArrowBackIosNewIcon />
@@ -166,7 +166,7 @@ const WithdrawHistoryMain = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  color: "#e4911d",
+                  color: "black",
                   flexGrow: 1,
                   textAlign: "center",
                   mr: 8,
@@ -190,9 +190,9 @@ const WithdrawHistoryMain = () => {
           }}
         >
           {[
-            { label: "All", icon: "/assets/all-da76a7fc.png" },
-            { label: "Bank Card", icon: "/assets/bankicon.png" },
-            { label: "USDT", icon: "/assets/usdtcoin.png" },
+            { label: "All", icon: "/assets/homet.png" },
+            { label: "Bank Card", icon: "/assets/bankcard2.png" },
+            { label: "USDT", icon: "/assets/usdt2.png" },
           ].map(({ label, icon }) => (
             <Button
               key={label}
@@ -201,8 +201,8 @@ const WithdrawHistoryMain = () => {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                backgroundColor: selectedType === label ? "#e4911d" : "white",
-                color: selectedType === label ? "white" : "#333",
+                backgroundColor: selectedType === label ? "#4A89FF" : "white",
+                color: selectedType === label ? "black" : "#333",
                 borderColor: selectedType === label ? "transparent" : "#E0E0E0",
                 borderRadius: 2,
                 boxShadow:
@@ -214,7 +214,7 @@ const WithdrawHistoryMain = () => {
                 textTransform: "none",
                 "&:hover": {
                   backgroundColor:
-                    selectedType === label ? "#e4911d" : "#720811",
+                    selectedType === label ? "#FFFFFF" : "#FFFFFF",
                   borderColor:
                     selectedType === label ? "transparent" : "#E0E0E0",
                 },
@@ -292,8 +292,8 @@ const WithdrawHistoryMain = () => {
                 
               }}
             >
-              <CardContent sx={{ padding: 0, mb: -2, backgroundColor: "#a50000" }}>
-                <Box sx={{ padding: 1, borderBottom: "1px solid #e0e0e0" , backgroundColor: "#a50000"}}>
+              <CardContent sx={{ padding: 0, mb: -2, backgroundColor: "#FFFFFF" }}>
+                <Box sx={{ padding: 1, borderBottom: "1px solid #e0e0e0" , backgroundColor: "#4F99EB"}}>
                   <Grid container alignItems="center">
                     <Grid item xs={6} sx={{ textAlign: "left" }}>
                       <Chip
@@ -335,7 +335,7 @@ const WithdrawHistoryMain = () => {
                           withdrawal.withdrawMethod === "USDT"
                             ? `$${withdrawal.balance}`
                             : `₹${withdrawal.balance}`,
-                        color: "#e67e22",
+                        color: "#27ae60",
                         fontSize: "14px",
                         fontWeight: "bold",
                       },
@@ -364,7 +364,7 @@ const WithdrawHistoryMain = () => {
                         <Grid item xs={6}>
                           <Typography
                             sx={{
-                              color: "white",
+                              color: "black",
                               fontSize: "13px",
                               lineHeight: "20px",
                             }}
@@ -377,7 +377,7 @@ const WithdrawHistoryMain = () => {
                             sx={{
                               fontSize,
                               fontWeight: fontWeight || "medium",
-                              color: color || "white",
+                              color: color || "black",
                               lineHeight: "20px",
                             }}
                           >

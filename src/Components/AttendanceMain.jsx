@@ -56,7 +56,7 @@ const AttendanceMain = ({ children }) => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                background: "linear-gradient(90deg, #4782ff 0%, #59adff 100%)", // Background color for the header
+                background: "linear-gradient(90deg, #FEFEFE 0%, #FEFEFE 100%)", // Background color for the header
                 padding: "8px 16px",
                 color: "white", // Text color to match the header background
               }}
@@ -74,7 +74,7 @@ const AttendanceMain = ({ children }) => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "white", // White text color for consistency
+                      color: "black", // White text color for consistency
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 8,

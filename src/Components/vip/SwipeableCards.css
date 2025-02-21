@@ -1,7 +1,7 @@
 .swipeable-cards-container {
   padding: 10px;
   margin: 0, 10px;
-  background-color: #380003;
+  background-color: #F7F8FF;
 }
 
 .card {
@@ -224,7 +224,7 @@ width: 100%;
   max-width: 400px;
   width: 95%;
   margin: 0 auto;
-  background-color: #720811;
+  background-color: #FFFFFF;
   padding: 10px;
   border-radius: 8px;
   font-family: Arial, sans-serif;
@@ -470,7 +470,7 @@ background: linear-gradient(90deg, #4782ff 0%, #59adff 100%);
   width: 100%;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%);
+  background: linear-gradient(180deg, #55A4FF 0%, #55A4FF 30%, #55A4FF 100%);
   color: white;
   cursor: pointer;
 }

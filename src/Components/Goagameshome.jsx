@@ -98,29 +98,6 @@ const TabLayout = () => {
   const [bingoPage, setBingoPage] = useState(0);
   const tabsRef = useRef(null);
 
-  // const tabs = [
-  //   { id: 'lobby', label: 'Lobby', img: 'assets/banners/r1.png' },
-  //   { id: 'flash', label: 'Flash', img: 'assets/banners/r2.png' },
-  //   { id: 'slot', label: 'Slot', img: 'assets/banners/r3.png' },
-  //   { id: 'sports', label: 'Popular', img: 'assets/banners/r4.png' },
-  //   { id: 'casino', label: 'Video', img: 'assets/banners/r5.png' },
-  //   { id: 'cards', label: 'Sport', img: 'assets/banners/r6.png' },
-  //   { id: 'dice', label: 'Fish', img: 'assets/banners/r7.png' },
-  //   { id: 'bingo', label: 'Lottery', img: 'assets/banners/r8.png' }
-  // ];
-
-
-  //new tabs:
-  // const tabs = [
-  //   { id: 'lobby', label: 'Lottry', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127134331wkt7.png' },
-  //   { id: 'flash', label: 'Rummy', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127140618epu3.png' },
-  //   { id: 'slot', label: 'Slots', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127160211wyu9.png' },
-  //   { id: 'sports', label: 'Popular', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127134718aedk.png' },
-  //   { id: 'casino', label: 'Casino', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127160544mw56.png' },
-  //   { id: 'cards', label: 'Sport', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127171151ol6s.png' },
-  //   { id: 'dice', label: 'Fishing', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240306120644tfcu.png' },
-  // ];
-
 
   const tabs = [
     {id: 'sports', label: 'Popular', img: 'https://ossimg.goa999.vip/GoaGame/gamecategory/gamecategory_20240127134718aedk.png', bgImage:"url(https://goagameb.com/assets/png/lottery_bg-1edd950a.png)" },

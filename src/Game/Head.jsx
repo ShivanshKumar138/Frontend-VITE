@@ -22,6 +22,8 @@ import { FormControlLabel, Radio } from "@mui/material";
 // import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { DialogActions} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+
 
 import "../App.css";
 import axios from "axios";
@@ -368,9 +370,9 @@ const Head = ({ timerKey }) => {
   };
 
   const textArray = [
-    "We are excited to welcome you to Gen-Z Win, where you can enjoy a wide range of games. But that's not all - there are also plenty of bonuses waiting for you to claim! Join us now and start play your game with Gen-Z Win. Get ready for non-stop fun and rewards. Welcome aboard!  Stay tuned for more updates and promotions.",
-    "24/7 Live support on Gen-Z Win club ",
-    "Gen-Z Win club welcomes you here !!",
+    "We are excited to welcome you to Mahakal Club, where you can enjoy a wide range of games. But that's not all - there are also plenty of bonuses waiting for you to claim! Join us now and start play your game with Mahakal Club. Get ready for non-stop fun and rewards. Welcome aboard!  Stay tuned for more updates and promotions.",
+    "24/7 Live support on Mahakal Club club ",
+    "Mahakal Club club welcomes you here !!",
   ];
 
   React.useEffect(() => {
@@ -733,8 +735,7 @@ const Head = ({ timerKey }) => {
         aspectRatio: "1",
         overflow: "hidden",
         borderRadius: "10px",
-        boxShadow:
-          animatedIndex === num ? "0 0 15px 5px rgba(255,255,255,0.7)" : "none",
+        
         transition: "all 0.3s ease-in-out",
         transform: animatedIndex === num ? "scale(1.25)" : "scale(1)",
       }}
@@ -770,7 +771,7 @@ const Head = ({ timerKey }) => {
     <div>
       <Mobile>
         {/* <h1>Hey</h1> */}
-        <div style={{ backgroundColor: "#f2f2f1" }}>
+        <div style={{ backgroundColor: "#F7F8FF" }}>
           <Grid
             container
             alignItems="center"
@@ -983,7 +984,7 @@ const Head = ({ timerKey }) => {
               marginLeft: "auto",
               marginRight: "auto",
               maxWidth: "93%",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+            
               marginTop: "-65px",
               backgroundColor: "#ffffff",
               borderRadius: "13px",
@@ -1256,7 +1257,7 @@ const Head = ({ timerKey }) => {
         display: "flex",
         alignItems: "center",
         position: "relative",
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  
       }}
     >
       {/* Top Cut-Out Circle */}
@@ -1476,7 +1477,7 @@ const Head = ({ timerKey }) => {
               </div>
             </div>
             {/* First Row */}
-            <Grid item xs={12} container justifyContent="space-evenly">
+            <Grid item xs={12} container justifyContent="space-evenly" sx={{boxShadow:"none"}}>
               <Button
                 onClick={() => {
                   handleOpenDrawer("green");
@@ -1866,7 +1867,7 @@ const Head = ({ timerKey }) => {
 
           <Snackbar
             open={openSnackbar}
-            autoHideDuration={1000}
+            autoHideDuration={500}
             onClose={handleCloseSnackbar}
             style={{
               position: "fixed",
@@ -1880,7 +1881,7 @@ const Head = ({ timerKey }) => {
               severity="success"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "white" }}
             >
-              Bet placed successfully!
+              Bet Succeed !
             </MuiAlert>
           </Snackbar>
 
@@ -2620,7 +2621,7 @@ const Head = ({ timerKey }) => {
     display: open ? "block" : "none",
     position: "absolute",
     zIndex: 2000,
-    left: 10,
+    left:5,
     top: "120px",
     width: "100%",
     height: "100%",
@@ -2633,7 +2634,7 @@ const Head = ({ timerKey }) => {
       backgroundColor: "transparent",
       margin: "15% auto",
       padding: 5,
-      width: "65%",
+      width: "75%",
       height: "55%",
       backgroundImage: `url(${
         gameResult === "Succeed"
@@ -2693,7 +2694,7 @@ const Head = ({ timerKey }) => {
     style={{
       color: "#fff",
       fontWeight: "normal",
-      fontSize: "10px",
+      fontSize: "15px",
     }}
   >
     Lottery results
@@ -2813,17 +2814,19 @@ const Head = ({ timerKey }) => {
         </div>
   </div>
   <Button
-      onClick={() => setOpen(false)}
-      style={{
-        backgroundColor: "#007bff",
-        color: "white",
-        marginTop: "0px",
-        padding: "8px 20px",
-        fontSize: "16px",
-      }}
-    >
-      Close
-    </Button>
+  onClick={() => setOpen(false)}
+  style={{
+    backgroundColor: "black",
+    color: "white",
+    marginTop: "-70px",
+    padding: "8px 20px",
+    fontSize: "16px",
+    opacity: "0.2",
+    borderRadius: "70px",
+  }}
+>
+  <CloseIcon />
+</Button>
 </div>
 
 

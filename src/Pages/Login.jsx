@@ -215,7 +215,7 @@ const Login = () => {
   </Typography>
   
   <Typography variant="h5" style={{ fontSize: "23px", fontWeight: 700, fontFamily: "helvetica" }}>
-    Gen-z Win
+    Mahakal Club
   </Typography>
   
   <Typography

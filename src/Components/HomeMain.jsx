@@ -32,12 +32,11 @@ import {
 import { Whatshot } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 // import { ReactComponent as CustomerIcon } from '../assets/svgexport-3.svg';
-import CustomerIcon from '../assets/svgexport-3.svg'; // ✅ No `{ ReactComponent as ... }`
-
+import CustomerIcon from "../assets/svgexport-3.svg"; // ✅ No `{ ReactComponent as ... }`
 
 import Games from "./Games";
 
-import SvgIcon from '@mui/material/SvgIcon';
+import SvgIcon from "@mui/material/SvgIcon";
 
 import LoadingLogo from "./LoadingLogo";
 // import DepositModal from "../Pages/depositModal"; // Adjust the path as needed
@@ -55,11 +54,13 @@ const Tab = styled(Container)(({ theme }) => ({
   overflow: "hidden",
 }));
 
-
 const MySvgIcon = () => (
-  <img src="https://goagameb.com/assets/svg/redhomeN-ae7073a2.svg" alt="icon" style={{ width: '12px', height: '12px', marginRight: '-5px' }} />
+  <img
+    src="https://goagameb.com/assets/svg/redhomeN-ae7073a2.svg"
+    alt="icon"
+    style={{ width: "12px", height: "12px", marginRight: "-5px" }}
+  />
 );
-
 
 const Loteria = [
   {
@@ -195,13 +196,13 @@ const Home = ({ children }) => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-  
+
     window.addEventListener("resize", setVh);
     setVh();
-  
+
     return () => window.removeEventListener("resize", setVh);
   }, []);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setWinners((prevWinners) => {
@@ -213,10 +214,9 @@ const Home = ({ children }) => {
     }, 2000); // Adjust the timing as needed
     return () => clearInterval(interval);
   }, []);
-  
+
   const lastWinner = winners.length > 0 ? winners[winners.length - 1] : null;
   const otherWinners = winners.length > 1 ? winners.slice(0, -1) : [];
-  
 
   const images = [
     {
@@ -350,7 +350,7 @@ const Home = ({ children }) => {
 
   const textArray = [
     "Welcome to the Black Lion Games! Greetings, Gamers and Enthusiasts!",
-    "The Gen-z Win Games are here to provide excitement and fun.",
+    "The Mahakal Club Games are here to provide excitement and fun.",
     "For your convenience and account safety, please ensure",
     "you fill in the genuine mobile number registered with your bank.",
     "Thank you for your cooperation and enjoy the games!",
@@ -450,7 +450,6 @@ const Home = ({ children }) => {
   return (
     <div style={{ position: "relative" }}>
       <Mobile>
-  
         {/* Other content */}
         <Box
           display="flex"
@@ -473,72 +472,107 @@ const Home = ({ children }) => {
           }}
         >
           <Box flexGrow={1} sx={{ backgroundColor: "F7F8FF" }}>
+            <Grid
+              container
+              alignItems="center"
+              justifyContent="space-between"
+              sx={{
+                position: "sticky",
+                top: 0,
+                zIndex: 1000,
+                backgroundColor: "#4781FF",
+                padding: "0px 1px",
+                color: "white",
+              }}
+            >
+              {/* Left Side - Logo */}
+              <Grid item xs={6} textAlign="left">
+                <img
+                  src="/assets/greenlogo.png"
+                  alt="logo"
+                  style={{ width: "140px", height: "45px" }}
+                />
+              </Grid>
 
-          <Grid
-  container
-  alignItems="center"
-  justifyContent="space-between"
-  sx={{
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-    backgroundColor: "#4781FF",
-    padding: "0px 1px",
-    color: "white",
-  }}
->
-  {/* Left Side - Logo */}
-  <Grid item xs={6} textAlign="left">
-    <img
-      src="/assets/greenlogo.png"
-      alt="logo"
-      style={{ width: "140px", height: "45px" }}
-    />
-  </Grid>
+              {/* Right Side - Icons */}
+              <Grid item xs={6} textAlign="right">
+                {/* Message Icon with Red Notification Dot */}
+                <Badge
+                  variant="dot"
+                  color="error"
+                  sx={{
+                    "& .MuiBadge-dot": {
+                      width: 8,
+                      height: 8,
+                      backgroundColor: "red",
+                      opacity: 0.5,
+                      top: 10,
+                      right: 15,
+                    },
+                  }}
+                >
+                  <IconButton
+                    sx={{
+                      borderRadius: 2,
+                      marginRight: "8px",
+                    }}
+                    onClick={() => navigate("/messages")}
+                  >
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns="http://www.w3.org/2000/svg"
+                      data-v-715dd0f6=""
+                      class="svg-icon icon-notification"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 60 60"
+                    >
+                      <defs>
+                        <symbol
+                          id="icon-notification"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 61 60"
+                          fill="#91B3FF"
+                        >
+                          {" "}
+                          <path
+                            opacity="0.2"
+                            d="M43 51.25H18C10.5 51.25 5.5 47.5 5.5 38.75V21.25C5.5 12.5 10.5 8.75 18 8.75H43C50.5 8.75 55.5 12.5 55.5 21.25V38.75C55.5 47.5 50.5 51.25 43 51.25Z"
+                            fill="#91B3FF"
+                          ></path>{" "}
+                          <path
+                            d="M30.4987 32.1818C28.3987 32.1818 26.2737 31.5318 24.6487 30.2068L16.8237 23.9568C16.4598 23.6408 16.2319 23.1966 16.1876 22.7167C16.1433 22.2369 16.286 21.7584 16.5858 21.3812C16.8857 21.0039 17.3196 20.757 17.7971 20.6919C18.2746 20.6268 18.7588 20.7486 19.1487 21.0318L26.9737 27.2818C28.8737 28.8068 32.0987 28.8068 33.9987 27.2818L41.8237 21.0318C42.6237 20.3818 43.8237 20.5068 44.4487 21.3318C45.0987 22.1318 44.9737 23.3318 44.1487 23.9568L36.3237 30.2068C34.7237 31.5318 32.5987 32.1818 30.4987 32.1818Z"
+                            fill="#91B3FF"
+                          ></path>
+                        </symbol>
+                      </defs>
+                      <g>
+                        {" "}
+                        <path
+                          opacity="0.4"
+                          d="M43 51.25H18C10.5 51.25 5.5 47.5 5.5 38.75V21.25C5.5 12.5 10.5 8.75 18 8.75H43C50.5 8.75 55.5 12.5 55.5 21.25V38.75C55.5 47.5 50.5 51.25 43 51.25Z"
+                          fill="#91B3FF"
+                        ></path>{" "}
+                        <path
+                          d="M30.4987 32.1818C28.3987 32.1818 26.2737 31.5318 24.6487 30.2068L16.8237 23.9568C16.4598 23.6408 16.2319 23.1966 16.1876 22.7167C16.1433 22.2369 16.286 21.7584 16.5858 21.3812C16.8857 21.0039 17.3196 20.757 17.7971 20.6919C18.2746 20.6268 18.7588 20.7486 19.1487 21.0318L26.9737 27.2818C28.8737 28.8068 32.0987 28.8068 33.9987 27.2818L41.8237 21.0318C42.6237 20.3818 43.8237 20.5068 44.4487 21.3318C45.0987 22.1318 44.9737 23.3318 44.1487 23.9568L36.3237 30.2068C34.7237 31.5318 32.5987 32.1818 30.4987 32.1818Z"
+                          fill="white"
+                        ></path>
+                      </g>
+                    </svg>
+                  </IconButton>
+                </Badge>
 
-  {/* Right Side - Icons */}
-  <Grid item xs={6} textAlign="right">
-    {/* Message Icon with Red Notification Dot */}
-    <Badge
-      variant="dot"
-      color="error"
-      sx={{
-        "& .MuiBadge-dot": {
-          width: 8,
-          height: 8,
-          backgroundColor: "red",
-          opacity:0.5,
-          top: 10,
-          right:15,
-        },
-      }}
-    >
-      <IconButton
-        sx={{
-          borderRadius: 2,
-          marginRight: "8px",
-        }}
-        onClick={() => navigate("/messages")}
-      >
-        <img src={messageIcon} style={{width:"30px",height:"30px"}}/>
-    
-
-      </IconButton>
-    </Badge>
-
-    {/* Download Button */}
-    <IconButton
-      sx={{
-        
-        borderRadius: 2,
-      }}
-      onClick={() => navigate("/download")}
-    >
-      <DownloadIcon sx={{ fontSize: 20, color: "white" }} />
-    </IconButton>
-  </Grid>
-</Grid>
-
+                {/* Download Button */}
+                <IconButton
+                  sx={{
+                    borderRadius: 2,
+                  }}
+                  onClick={() => navigate("/download")}
+                >
+                  <DownloadIcon sx={{ fontSize: 20, color: "white" }} />
+                </IconButton>
+              </Grid>
+            </Grid>
 
             {/* //content */}
             <Header>
@@ -582,14 +616,14 @@ const Home = ({ children }) => {
                   <Typography
                     sx={{
                       color: "#303A4C",
-                    
+
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
                       textAlign: "left",
                       overflow: "hidden",
-                      fontFamily: 'Bahnschrift',
+                      fontFamily: "Bahnschrift",
                       fontWeight: 400,
-                      fontSize: '13px',
+                      fontSize: "13px",
                       WebkitLineClamp: 2, // Limits the text to 2 lines
                       lineClamp: 2, // Fallback for non-WebKit browsers
                       textOverflow: "ellipsis", // Adds "..." at the end of overflowed text
@@ -601,26 +635,26 @@ const Home = ({ children }) => {
               </Box>
 
               <Button
-  variant="outlined"
-  sx={{
-    borderColor: "#4781FF",
-    color: "#4781FF",
-    background: "transparent",
-    "&:hover": {
-      borderColor: "#4781FF",
-      background: "transparent",
-    },
-    borderRadius: "50px",
-    textTransform: "initial",
-    padding: "3px 10px",
-    fontFamily: 'Bahnschrift',
-    fontWeight: 400,
-    fontSize: '13px',
-  }}
-  startIcon={<MySvgIcon />}
->
-  Detail
-</Button>
+                variant="outlined"
+                sx={{
+                  borderColor: "#4781FF",
+                  color: "#4781FF",
+                  background: "transparent",
+                  "&:hover": {
+                    borderColor: "#4781FF",
+                    background: "transparent",
+                  },
+                  borderRadius: "50px",
+                  textTransform: "initial",
+                  padding: "3px 10px",
+                  fontFamily: "Bahnschrift",
+                  fontWeight: 400,
+                  fontSize: "13px",
+                }}
+                startIcon={<MySvgIcon />}
+              >
+                Detail
+              </Button>
             </Grid>
 
             {/* All game cards section */}
@@ -628,31 +662,31 @@ const Home = ({ children }) => {
             <Games />
             {/* <h1>Hey</h1> */}
             {/* Winning Information */}
-            <Box display="flex" alignItems="center" mt={2} ml={2} mb={-1} sx={{
-                    fontSize: '16px',
-                    fontWeight: 900,
-                    fontFamily: 'Arial, sans-serif',
-                    color: '#333',
-                    mb: 3,
-                    borderLeft: '3px solid #4D8FFF',
-                    pl: 1, // Add padding to the left
-                    lineHeight: '1.5', // Adjust line height to control border height
-                    width: 'fit-content'
-                  }}>
-
-               
-             
-            
-            </Box>
+            <Box
+              display="flex"
+              alignItems="center"
+              mt={2}
+              ml={2}
+              mb={-1}
+              sx={{
+                fontSize: "16px",
+                fontWeight: 900,
+                fontFamily: "Arial, sans-serif",
+                color: "#333",
+                mb: 3,
+                borderLeft: "3px solid #4D8FFF",
+                pl: 1, // Add padding to the left
+                lineHeight: "1.5", // Adjust line height to control border height
+                width: "fit-content",
+              }}
+            ></Box>
             <Winscroll />
-             <Stage />
-           
+            <Stage />
 
             {/* Today's earning chart */}
-           
 
             {/* InfoSection */}
-           
+
             <br />
             <br />
             <br />
@@ -670,7 +704,6 @@ const Home = ({ children }) => {
 };
 
 export default Home;
-
 
 /*eslint-disable*/
 
@@ -794,7 +827,7 @@ export default Home;
 
 //   const textArray = [
 //     "Welcome to the Black Lion Games! Greetings, Gamers and Enthusiasts!",
-//     "The Gen-z Win Games are here to provide excitement and fun.",
+//     "The Mahakal Club Games are here to provide excitement and fun.",
 //     "For your convenience and account safety, please ensure",
 //     "you fill in the genuine mobile number registered with your bank.",
 //     "Thank you for your cooperation and enjoy the games!",

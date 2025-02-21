@@ -383,7 +383,7 @@ const Register = () => {
               fontFamily: "helvetica",
             }}
           >
-            Gen-z Win
+            Mahakal Club
           </Typography>
 
           <Typography

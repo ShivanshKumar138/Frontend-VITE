@@ -97,7 +97,7 @@ const ActivityMain = ({ children }) => {
           height="calc(var(--vh, 1vh) * 100)"
           position="relative"
         >
-          <Box flexGrow={1} sx={{ backgroundColor: "#380003" }}>
+          <Box flexGrow={1} sx={{ backgroundColor: "#F7F8FF" }}>
             <Grid
               container
               alignItems="center"
@@ -106,7 +106,7 @@ const ActivityMain = ({ children }) => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                backgroundColor: "#720811 ",
+                backgroundColor: "#4885FF ",
                 padding: "8px 16px",
                 color: "white",
                 mb: 2,
@@ -159,7 +159,7 @@ const ActivityMain = ({ children }) => {
                       />
                       <Typography
                         sx={{
-                          color: "#e4911d",
+                          color: "#768096",
                           textTransform: "initial",
                           fontSize: "11px",
                         }}
@@ -184,79 +184,78 @@ const ActivityMain = ({ children }) => {
             >
 
 
-              <Grid item xs={6}>
-                <Card onClick={navigateToPage2}>
-                  <CardMedia
-                    component="img"
-                    height="110"
-                    image="../assets/images/signInBanner-33f86d3f.png"
-                    alt="Image 1"
-                  />
-                  <CardContent
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      textAlign: "left",
-                      height: "50px",
-                    }}
-                  >
-                    <Typography
-                      component="div"
-                      sx={{
-                        color: "black",
-                        fontWeight: "bold",
-                        fontSize: "13px",
-                      }}
-                    >
-                      Gifts
-                    </Typography>
-                    <Typography
-                      variant="h1"
-                      color="text.secondary"
-                      sx={{ color: "#80849c", fontSize: "12px" }}
-                    >
-                      Enter the redemption code to receive gift rewards
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={6}>
-                <Card onClick={navigateToPage3}>
-                  <CardMedia
-                    component="img"
-                    height="110"
-                    image="../../assets/images/giftRedeem-45917887.png"
-                    alt="Image 2"
-                  />
-                  <CardContent
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      textAlign: "left",
-                      height: "50px",
-                    }}
-                  >
-                    <Typography
-                      component="div"
-                      sx={{
-                        color: "black",
-                        fontWeight: "bold",
-                        fontSize: "13px",
-                      }}
-                    >
-                      Attendance bonus
-                    </Typography>
-                    <Typography
-                      variant="h1"
-                      color="text.secondary"
-                      sx={{ color: "#80849c", fontSize: "12px" }}
-                    >
-                      The more consecutive days you sign in, the higher the
-                      reward will
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-
-
+<Grid item xs={6}>
+  <Card onClick={navigateToPage2} sx={{ boxShadow: "none" }}>
+    <CardMedia
+      component="img"
+      height="110"
+      image="../assets/images/signInBanner-33f86d3f.png"
+      alt="Image 1"
+    />
+    <CardContent
+      sx={{
+        backgroundColor: "#FFFFFF",
+        textAlign: "left",
+        height: "50px",
+      }}
+    >
+      <Typography
+        component="div"
+        sx={{
+          color: "black",
+          fontWeight: 700,
+          fontFamily:"helvetica",
+           fontSize: "15px",
+        }}
+      >
+        Gifts
+      </Typography>
+      <Typography
+        variant="h1"
+        color="text.secondary"
+        sx={{ color: "#80849c", fontSize: "12px" }}
+      >
+        Enter the redemption code to receive gift rewards
+      </Typography>
+    </CardContent>
+  </Card>
+</Grid>
+<Grid item xs={6}>
+  <Card onClick={navigateToPage3} sx={{ boxShadow: "none" }}>
+    <CardMedia
+      component="img"
+      height="110"
+      image="../../assets/images/giftRedeem-45917887.png"
+      alt="Image 2"
+    />
+    <CardContent
+      sx={{
+        backgroundColor: "#FFFFFF",
+        textAlign: "left",
+        height: "50px",
+      }}
+    >
+      <Typography
+        component="div"
+        sx={{
+          color: "black",
+         fontWeight: 700,
+         fontFamily:"helvetica",
+          fontSize: "15px",
+        }}
+      >
+        Attendance bonus
+      </Typography>
+      <Typography
+        variant="h1"
+        color="text.secondary"
+        sx={{ color: "#80849c", fontSize: "12px" }}
+      >
+        The more consecutive days you sign in, the higher the reward will
+      </Typography>
+    </CardContent>
+  </Card>
+</Grid>
 
 
             </Grid>
@@ -277,9 +276,8 @@ const ActivityMain = ({ children }) => {
               {cardData.map((card, index) => (
                 <Grid item xs={12} key={index}>
                   <Card
-                    sx={{ borderRadius: "10px", mt: 1, cursor: "pointer" }}
-                    onClick={() => navigate(card.url)} // Add onClick event here
-                  >
+                    sx={{ borderRadius: "10px", mt: 1, cursor: "pointer",boxShadow: "none"  }}
+                    onClick={() => navigate(card.url)}  >
                     <CardMedia
                       component="img"
                       height="auto"

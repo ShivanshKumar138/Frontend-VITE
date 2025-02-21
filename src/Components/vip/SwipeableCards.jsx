@@ -180,7 +180,7 @@ const SwipeableCards = () => {
       marginBottom: "20px",
     },
     associated: {
-      backgroundColor: "#720811",
+      backgroundColor: "#FFFFFF",
       padding: "8px",
       borderRadius: "10px",
     },
@@ -268,6 +268,9 @@ const SwipeableCards = () => {
                 position: "relative",
                 padding: "10px",
                 overflow: "hidden",
+                height: "170px",
+                width:"80%",
+                marginLeft:"7%"
               }}
             >
               {image && (
@@ -437,7 +440,7 @@ const SwipeableCards = () => {
         : level.awarded === "Diamond"
         ? `linear-gradient(to right, #1177ea, #308efe)`
         : `linear-gradient(117.29deg, #ff7878 21.85%, #ffa493 67.02%)`,
-    marginTop: "5px",
+    marginTop: "-8px",
     paddingTop: "1px",
     paddingBottom: "1px",
     borderRadius: "10px",
@@ -493,11 +496,11 @@ const SwipeableCards = () => {
                   }}
                 >
                   <div className="d-img">
-                    <Diamond sx={{ color: "#e4911d", fontSize: 30 }} />
+                    <Diamond sx={{ color: "#55A5FF", fontSize: 30 }} />
                   </div>
                   <div
                     style={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       fontSize: "1.1em",
                       fontWeight: 600,
                       lineHeight: "30px",
@@ -532,7 +535,7 @@ const SwipeableCards = () => {
                     <div style={{ width: "80%" }}>
                       <div
                         style={{
-                          color: "white",
+                          color: "black",
                           fontSize: "16px",
                           margin: "0",
                         }}
@@ -541,7 +544,7 @@ const SwipeableCards = () => {
                       </div>
                       <div
                         style={{
-                          color: "white",
+                          color: "#768096",
                           fontSize: "13px",
                         }}
                       >
@@ -574,7 +577,7 @@ const SwipeableCards = () => {
                           display: "flex",
                           justifyContent: "space-evenly",
                           margin: "5px auto",
-                          border: "1px solid #d9ac4e",
+                          border: "1px solid #55A4FF",
                           borderRadius: "5px",
                         }}
                       >
@@ -617,7 +620,7 @@ const SwipeableCards = () => {
                     <div style={{ width: "80%" }}>
                       <div
                         style={{
-                          color: "white",
+                          color: "black",
                           fontSize: "16px",
                           margin: "0",
                         }}
@@ -626,7 +629,7 @@ const SwipeableCards = () => {
                       </div>
                       <div
                         style={{
-                          color: "white",
+                          color: "#768096",
                           fontSize: "13px",
                         }}
                       >
@@ -659,7 +662,7 @@ const SwipeableCards = () => {
                           display: "flex",
                           justifyContent: "space-evenly",
                           margin: "5px auto",
-                          border: "1px solid #d9ac4e",
+                          border: "1px solid #55A4FF",
                           borderRadius: "5px",
                         }}
                       >
@@ -701,14 +704,14 @@ const SwipeableCards = () => {
                     <div style={{ width: "80%" }}>
                       <div
                         style={{
-                          color: "white",
+                          color: "black",
                           fontSize: "16px",
                           margin: "0",
                         }}
                       >
                         <div
                           style={{
-                            color: "white",
+                            color: "black",
                             fontSize: "16px",
                             margin: "0",
                           }}
@@ -717,7 +720,7 @@ const SwipeableCards = () => {
                         </div>
                         <div
                           style={{
-                            color: "white",
+                            color: "#768096",
                             fontSize: "13px",
                           }}
                         >
