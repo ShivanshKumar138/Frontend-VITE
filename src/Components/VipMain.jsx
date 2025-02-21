@@ -96,7 +96,7 @@ const VipMain = ({ children }) => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                background: "#a50000",
+                background: "#539DFF",
                 padding: "4px 8px",
                 color: "black",
               }}
@@ -105,7 +105,7 @@ const VipMain = ({ children }) => {
                 <Grid item xs={2}>
                   <IconButton
                     onClick={handleRedirect}
-                    sx={{ color: "#e4911d", ml: -5 }}
+                    sx={{ color: "white", ml: -5 }}
                   >
                     <ArrowBackIosNewIcon />
                   </IconButton>
@@ -114,7 +114,7 @@ const VipMain = ({ children }) => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#e4911d",
+                      color: "white",
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 8,

@@ -111,7 +111,7 @@ const NotificationModal = ({ open, onClose }) => {
       </Typography>
 
       <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-        👑 👑 Gen-z Win  wins limited-time recharge reward event 👑
+        👑 👑 Mahakal Club  wins limited-time recharge reward event 👑
       </Typography>
 
       <Typography variant="body1" fontWeight="bold" gutterBottom>
@@ -131,7 +131,7 @@ const NotificationModal = ({ open, onClose }) => {
       </Typography>
 
       <Typography variant="body1" sx={{ borderTop: '1px solid #ddd', pt: 2, mt: 2 }} gutterBottom fontWeight="bold">
-        😍 Gen-z Win  launches a new agent reward plan. For each recommended downline, you can get a high first deposit bonus. 
+        😍 Mahakal Club  launches a new agent reward plan. For each recommended downline, you can get a high first deposit bonus. 
         The specific reward is subject to the event. The activation quota is limited. Please contact your agent to activate.
       </Typography>
 

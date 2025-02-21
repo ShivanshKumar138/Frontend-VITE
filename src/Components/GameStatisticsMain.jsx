@@ -219,12 +219,12 @@ function GameStatisticsMain({ children }) {
           flexDirection="column"
           height="calc(var(--vh, 1vh) * 100)"
           position="relative"
-          sx={{ backgroundColor: "#380003" }}
+          sx={{ backgroundColor: "#F7F8FF" }}
         >
           <AppBar
             position="sticky"
             sx={{
-              bgcolor: "#a50000", // Green background color
+              bgcolor: "#FFFFFF", // Green background color
               boxShadow: "none",
               borderBottom: "1px solid #",
             }}
@@ -237,14 +237,14 @@ function GameStatisticsMain({ children }) {
               >
                 <Grid item xs={1} textAlign="left">
                   <IconButton color="inherit" onClick={handleBackClick}>
-                    <ArrowBackIcon sx={{ color: "#e4911d" }} />
+                    <ArrowBackIcon sx={{ color: "black" }} />
                   </IconButton>
                 </Grid>
                 <Grid item xs={11} textAlign="center">
                   <Typography
                     variant="h6"
                     component="div"
-                    sx={{ color: "#e4911d", fontWeight: "normal" }} // White text and normal font weight
+                    sx={{ color: "black", fontWeight: "normal" }} // White text and normal font weight
                   >
                     Game Statistics
                   </Typography>
@@ -269,8 +269,8 @@ function GameStatisticsMain({ children }) {
                 sx={{
                   flex: 1,
                   height: "30px",
-                  bgcolor: activeButton === label ? "#e4911d" : "#e4911d",
-                  color: activeButton === label ? "white" : "white",
+                  bgcolor: activeButton === label ? "#58A9FF" : "white",
+                  color: activeButton === label ? "white" : "black",
 
                   borderRadius: "20px",
                   marginRight: "10px",
@@ -302,7 +302,7 @@ function GameStatisticsMain({ children }) {
               mt: 2,
               mx: 2,
               border: "1px solid #e0e0e0", // Light gray border
-              bgcolor: "#720811",
+              bgcolor: "#FFFFFF",
             }}
           >
             <Typography
@@ -311,7 +311,7 @@ function GameStatisticsMain({ children }) {
             >
               ₹{stats.totalAmountBet.toFixed(2)}
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: "white" }}>
+            <Typography variant="subtitle1" sx={{ color: "black" }}>
               Total bet
             </Typography>
           </Box>

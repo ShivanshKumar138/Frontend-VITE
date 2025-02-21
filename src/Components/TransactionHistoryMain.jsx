@@ -152,77 +152,77 @@ const TransactionCard = ({ transaction }) => {
 
   switch (true) {
     case transaction.type === "Invitation Bonus":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "Invitation Bonus";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "DailyReward":
-      headerStyle = { background: "#a50000", color: "#e4911d" };
+      headerStyle = { background: "#4884FF", color: "white" };
       headerText = "Daily Reward";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "RebateBonus":
-      headerStyle = { background: "#a50000", color: "#e4911d" };
+      headerStyle = { background: "#4884FF", color: "white" };
       headerText = "Rebate Bonus";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "Salary":
-      headerStyle = { background: "#a50000", color: "#e4911d" };
+      headerStyle = { background: "#4884FF", color: "white" };
       headerText = "Salary";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "commission":
-      headerStyle = { background: "#a50000", color: "#e4911d" };
+      headerStyle = { background: "#4884FF", color: "white" };
       headerText = "Agent Commission/Bonus";
       amountStyle = { color: "#008000" };
       break;
     case ["WingoBet", "K3Bet", "TRXBet", "5DBet"].includes(transaction.type):
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Light Blue
+      headerStyle = { background: "#4884FF", color: "white" }; // Light Blue
       headerText = "Bet";
       amountStyle = { color: "#FF0000" };
       break;
     case transaction.type === "deposit":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "Deposit";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "withdraw":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Red
+      headerStyle = { background: "#4884FF", color: "white" }; // Red
       headerText = "Withdraw";
       amountStyle = { color: "#FF0000" };
       break;
     case transaction.type === "DepositBonus":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Red
+      headerStyle = { background: "#4884FF", color: "white" }; // Red
       headerText = "First Deposit Bonus";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type.startsWith("Coupon"):
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "Envelop";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "Sign Up Bonus":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "Sign Up Bonus";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "AttendanceBonus":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "Attendance Bonus";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "VIPLevelReward":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "VIP Level Reward";
       amountStyle = { color: "#008000" };
       break;
     case transaction.type === "VIPMonthlyReward":
-      headerStyle = { background: "#a50000", color: "#e4911d" }; // Green
+      headerStyle = { background: "#4884FF", color: "white" }; // Green
       headerText = "VIP Monthly Reward";
       amountStyle = { color: "#008000" };
       break;
     default:
-      headerStyle = { background: "#a50000", color: "#e4911d" };
+      headerStyle = { background: "#4884FF", color: "white" };
       headerText = "Transaction";
   }
 
@@ -379,16 +379,16 @@ const TransactionHistoryMain = () => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                backgroundColor: "#a50000",
+                backgroundColor: "#FFFFFF",
                 padding: "4px 8px",
-                color: "#e4911d",
+                color: "#1e2637",
               }}
             >
               <Grid item container alignItems="center" justifyContent="center">
                 <Grid item xs={2}>
                   <IconButton
                     onClick={handleBackClick}
-                    sx={{ color: "#e4911d", ml: -5 }}
+                    sx={{ color: "#1e2637", ml: -5 }}
                   >
                     <ArrowBackIosNewIcon />
                   </IconButton>
@@ -397,7 +397,7 @@ const TransactionHistoryMain = () => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 8,
@@ -414,7 +414,7 @@ const TransactionHistoryMain = () => {
                 padding: "16px",
                 display: "flex",
                 gap: "12px",
-                backgroundColor: "#380003",
+                backgroundColor: "#F7F8FF",
               }}
             >
               <Button
@@ -462,7 +462,7 @@ const TransactionHistoryMain = () => {
 
           <Box
             flexGrow={1}
-            sx={{ padding: "16px", backgroundColor: "#380003" }}
+            sx={{ padding: "16px", backgroundColor: "#F7F8FF" }}
           >
             {transactions.length > 0 ? (
               transactions.map((transaction, index) => (

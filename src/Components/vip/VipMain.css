@@ -1,8 +1,8 @@
 .topbox {
-  background: #380003;
+  background: #539DFF;
   min-height: 6rem;
   width: 91.8%;
-  color:#e4911d;
+  color:white;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -89,8 +89,8 @@
 } */
 
 .n-box {
-  color: #a50000;
-  border: 1px solid #a50000;
+  color: #768096;
+  border: 1px solid #768096;
   margin: 10px auto;
   width: 90%;
   padding: 12px;

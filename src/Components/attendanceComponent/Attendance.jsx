@@ -105,7 +105,7 @@ function Attendance() {
           </div>
           <div className="contentThree">
             <p>Accumulated</p>
-            <h1>
+            <h1 style={{ color: "white" }}>  
               {loading
                 ? "Loading"
                 : user?.totalBonusAmount?.toFixed(2) || "0.00"}

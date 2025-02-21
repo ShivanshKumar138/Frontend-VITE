@@ -18,6 +18,7 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import axios from "axios";
 import { domain } from "./config";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 const depositOptions = [
   { amount: 300, bonus: 50 },
@@ -336,25 +337,35 @@ const PromotionMain = ({ children }) => {
           height="calc(var(--vh, 1vh) * 100)"
           position="relative"
         >
-          <Box flexGrow={1} sx={{ backgroundColor: "#380003" }}>
-            <Grid
-              container
-              alignItems="center"
-              justifyContent="space-between"
-              sx={{
-                position: "sticky",
-                top: 0,
-                zIndex: 1000,
-                backgroundColor: "#a50000",
-                padding: "12px 16px",
-                color: "#e4911d",
-              }}
-            >
-              <Grid item xs={12} textAlign="center">
-                <span style={{ fontSize: "1.1rem" }}>Agency </span>
-              </Grid>
-            </Grid>
-
+          <Box flexGrow={1} sx={{ backgroundColor: "#f7f8ff" }}>
+          <Grid
+  container
+  alignItems="center"
+  justifyContent="space-between"
+  sx={{
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+    backgroundColor: "#ffffff",
+    padding: "12px 16px",
+    color: "#1e2637",
+  }}
+>
+  <Grid item xs={12}>
+    <Box display="flex" justifyContent="center" alignItems="center" position="relative">
+      <span style={{ fontSize: "19px", fontFamily: "helvetica", fontWeight: 400 }}>
+        Agency
+      </span>
+      <Box position="absolute" right={0}>
+        <img
+          src="/assets/subord.png" // Replace with the actual path to your icon
+          alt="icon"
+          style={{ width: "24px", height: "24px", marginLeft: "8px" }}
+        />
+      </Box>
+    </Box>
+  </Grid>
+</Grid>
             <Grid
               container
               spacing={2}
@@ -375,10 +386,10 @@ const PromotionMain = ({ children }) => {
                 xs={12}
                 sx={{
                   borderRadius: "0px 0px 0 0",
-                  backgroundImage: 'url("/assets/promotionbg-13880557.png")',
+                  background: 'linear-gradient(#94C3FB, #4884ff), url("https://goagamea.com/assets/png/promotionbg-13880556.png")',
+                  backgroundBlendMode: "overlay",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  background: "#380003",
                   height: "250px",
                   padding: "10px",
                   display: "flex",
@@ -391,7 +402,7 @@ const PromotionMain = ({ children }) => {
                 <Typography
                   variant="h5"
                   mt={1}
-                  sx={{ color: "#e4911d" }}
+                  sx={{ color: "#FFFFFF" }}
                   align="center"
                 >
                   {`\u20B9${yesterdayCommission.toFixed(2)}`}
@@ -399,8 +410,8 @@ const PromotionMain = ({ children }) => {
 
                 <Typography
                   variant="body2"
-                  color="#e4911d"
-                  backgroundColor="#720811"
+                  color="#4884FF"
+                  backgroundColor="#FFFFFF"
                   align="center"
                   mt="3px"
                   padding="0.5px 15px"
@@ -411,7 +422,7 @@ const PromotionMain = ({ children }) => {
 
                 <Typography
                   variant="caption"
-                  color={"#e4911d"}
+                  color={"#FFFFFF"}
                   align="center"
                   mt="3px"
                 >
@@ -424,7 +435,7 @@ const PromotionMain = ({ children }) => {
                   sx={{
                     maxHeight: "70%",
                     maxWidth: "97%",
-                    marginTop: "20px",
+                    marginTop: "10px",
                     borderRadius: "8px",
                     boxShadow: 2,
                   }}
@@ -436,15 +447,15 @@ const PromotionMain = ({ children }) => {
                     xs={12}
                     sx={{
                       borderRadius: "8px 8px 0 0",
-                      background: "#a50000",
-                      borderRight: "1px solid #ccc",
+                      background: "#4883ff",
+                      borderRight: "1px solid #4883ff",
                       padding: "0.6rem",
                     }}
                   >
                     <Grid item xs={6} sx={{ borderRight: "1px solid #ccc" }}>
                       <Typography
                         variant="body1"
-                        sx={{ color: "#e4911d", fontWeight: "bold" }}
+                        sx={{ color: "#FFFFFF", fontFamily:"helvetica", fontWeight:400,fontSize:"14px" }}
                         align="center"
                       >
                         Direct subordinates
@@ -453,7 +464,7 @@ const PromotionMain = ({ children }) => {
                     <Grid item xs={6}>
                       <Typography
                         variant="body1"
-                        sx={{ color: "#e4911d", fontWeight: "bold" }}
+                        sx={{ color: "#FFFFFF", fontFamily:"helvetica", fontWeight:400,fontSize:"14px" }}
                         align="center"
                       >
                         Team subordinates
@@ -468,7 +479,7 @@ const PromotionMain = ({ children }) => {
                     xs={12}
                     sx={{
                       padding: "7px",
-                      backgroundColor: "#720811",
+                      backgroundColor: "#FFFFFF",
                       borderRadius: "0 0 8px 8px",
                     }}
                   >
@@ -481,10 +492,10 @@ const PromotionMain = ({ children }) => {
                             sx={{
                               color:
                                 index === 1
-                                  ? "white"
+                                  ? "green"
                                   : index === 2
-                                  ? "white"
-                                  : "white",
+                                  ? "orange"
+                                  : "#1E2637",
                             }}
                           >
                             {dataItems[index].value}
@@ -493,7 +504,7 @@ const PromotionMain = ({ children }) => {
                             variant="caption"
                             align="center"
                             fontSize={10}
-                            sx={{ color: "white", display: "block" }}
+                            sx={{ color: "#1E2637", display: "block", fontFamily:"helvetica", fontWeight:400,fontSize:"11px" }}
                           >
                             {dataItems[index].heading}
                           </Typography>
@@ -506,10 +517,11 @@ const PromotionMain = ({ children }) => {
                             sx={{
                               color:
                                 index === 1
-                                  ? "white"
+                                  ? "green"
                                   : index === 2
-                                  ? "white"
-                                  : "white",
+                                  ? "orange"
+                                  : "#1E2637",
+                                  fontFamily: "bold",
                             }}
                           >
                             {dataItems[index + 4].value}
@@ -518,7 +530,7 @@ const PromotionMain = ({ children }) => {
                             variant="caption"
                             align="center"
                             fontSize={10}
-                            sx={{ color: "white", display: "block" }}
+                            sx={{ color: "#1E2637", display: "block",fontFamily:"helvetica", fontWeight:400,fontSize:"11px" }}
                           >
                             {dataItems[index + 4].heading}
                           </Typography>
@@ -537,14 +549,15 @@ const PromotionMain = ({ children }) => {
                 width: "90%",
                 marginLeft: "auto",
                 marginRight: "auto",
-                marginTop: "20px", // Adjust as needed
+                marginTop: "10px", // Adjust as needed
                 marginBottom: "10px",
-                background: "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                background: "linear-gradient(180deg, #4A89FF 0%, #4A89FF 30%, #4A89FF 100%)",
                 "&:hover": {
-                  background: "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                  background: "linear-gradient(180deg, #4A89FF 0%, #4A89FF 30%, #4A89FF 100%)",
                 },
                 color: "#ffffff",
                 borderRadius: "20px", // Adjust as needed
+                fontSize: "16px",fontFamily:"helvetica", fontWeight:700,
               }}
             >
               Invitation Link
@@ -560,9 +573,9 @@ const PromotionMain = ({ children }) => {
                     }
                   }}
                   sx={{
-                    backgroundColor: "#720811",
+                    backgroundColor: "#FFFFFF",
                     "&:hover": {
-                      backgroundColor: "#720811",
+                      backgroundColor: "#FFFFFF",
                     },
                     padding: 3,
                     margin: "10px",
@@ -579,7 +592,7 @@ const PromotionMain = ({ children }) => {
                   <Typography
                     variant="h4"
                     sx={{
-                      color: "white",
+                      color: "#1E2637",
                       flex: 1,
                       fontSize: "0.9rem",
                       display: "flex",
@@ -618,9 +631,9 @@ const PromotionMain = ({ children }) => {
 
                   {option.label !== "Copy invitation code" && (
                     <ListItemIcon
-                      style={{ marginLeft: "auto", color: "white" }}
+                      style={{ marginLeft: "auto", color: "black" }}
                     >
-                      <ArrowForwardIcon />
+                      <KeyboardArrowRightIcon />
                     </ListItemIcon>
                   )}
                 </MenuItem>
@@ -630,7 +643,7 @@ const PromotionMain = ({ children }) => {
             <Grid
               mt={4}
               sx={{
-                backgroundColor: "#720811",
+                backgroundColor: "#FFFFFF",
                 borderRadius: "8px",
                 marginLeft: "auto",
                 marginRight: "auto",
@@ -658,7 +671,7 @@ const PromotionMain = ({ children }) => {
                     variant="h7"
                     sx={{
                       fontWeight: "bold",
-                      color: "white",
+                      color: "#1E2637",
                     }}
                   >
                     Promotion data
@@ -669,34 +682,34 @@ const PromotionMain = ({ children }) => {
               {/* Content */}
               <Grid container spacing={1}>
                 <Grid item xs={6}>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {thisWeekCommission}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {data[0].heading}
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {lifetimeCommission}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {data[1].heading}
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {totalDirectSubordinates}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {data[2].heading}
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {totalAllSubordinates}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "white" }}>
+                  <Typography variant="body2" sx={{ color: "#1E2637" }}>
                     {data[3].heading}
                   </Typography>
                 </Grid>

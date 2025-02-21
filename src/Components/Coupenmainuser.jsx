@@ -106,7 +106,7 @@ const Coupenmainuser = ({ children }) => {
                 position: "sticky",
                 top: 0,
                 zIndex: 1000,
-                background: "#a50000",
+                background: "#FFFFFF",
                 padding: "8px 16px",
                 color: "white",
               }}
@@ -114,7 +114,7 @@ const Coupenmainuser = ({ children }) => {
               <Grid item container alignItems="center" justifyContent="center">
                 <Grid item xs={2}>
                   <IconButton
-                    sx={{ color: "#e4911d", ml: -5 }}
+                    sx={{ color: "#1e2637", ml: -5 }}
                     onClick={handleRedirect}
                   >
                     <ArrowBackIosNewIcon />
@@ -124,7 +124,7 @@ const Coupenmainuser = ({ children }) => {
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#e4911d",
+                      color: "#1e2637",
                       flexGrow: 1,
                       textAlign: "center",
                       mr: 8,
@@ -136,16 +136,16 @@ const Coupenmainuser = ({ children }) => {
               </Grid>
             </Grid>
 
-            <Box sx={{ backgroundColor: "#380003" }}>
+            <Box sx={{ backgroundColor: "#F7F8FF" }}>
               <img
                 src="../assets/images/gift.png"
                 alt="coupon"
                 style={{ width: "100%", height: "200%" }}
               />
-              <Box sx={{ backgroundColor: "#380003", padding: 1 }}>
+              <Box sx={{ backgroundColor: "#F7F8FF", padding: 1 }}>
                 <Box
                   sx={{
-                    backgroundColor: "#720811",
+                    backgroundColor: "#FFFFFF",
                     padding: 2,
                     borderRadius: 3,
                   }}
@@ -154,7 +154,7 @@ const Coupenmainuser = ({ children }) => {
                     variant="body1"
                     gutterBottom
                     align="left"
-                    color="white"
+                    color="#1e2637"
                   >
                     Hi
                   </Typography>
@@ -162,7 +162,7 @@ const Coupenmainuser = ({ children }) => {
                     variant="body1"
                     gutterBottom
                     align="left"
-                    color="white"
+                    color="#1e2637"
                   >
                     We have a gift for you
                   </Typography>
@@ -170,7 +170,7 @@ const Coupenmainuser = ({ children }) => {
                     variant="body1"
                     gutterBottom
                     align="left"
-                    color="white"
+                    color="#1e2637"
                     sx={{ mt: 4, fontSize: "15px" }}
                   >
                     Please enter the gift Code below
@@ -213,7 +213,7 @@ const Coupenmainuser = ({ children }) => {
                       sx={{
                         borderRadius: "20px",
                         background:
-                          "linear-gradient(180deg, #fbfff4 0%, #efb228 30%, #986800 100%)",
+                          "linear-gradient(180deg, #56A5FF 0%, #56A5FF 30%, #56A5FF 100%)",
                         "&:hover": {
                           background:
                             "linear-gradient(to right, #4782ff, #4782ff)",
@@ -232,7 +232,7 @@ const Coupenmainuser = ({ children }) => {
                     borderRadius: 2,
                     overflow: "hidden",
                     border: "none",
-                    backgroundColor: "#720811",
+                    backgroundColor: "#FFFFFF",
                     
                   }}
                 >
@@ -240,7 +240,7 @@ const Coupenmainuser = ({ children }) => {
                     <Typography
                       variant="h6"
                       gutterBottom
-                      sx={{ color: "#e4911d", textAlign: "left", mb: 2 }}
+                      sx={{ color: "#1e2637", textAlign: "left", mb: 2 }}
                     >
                       Gift History
                     </Typography>
@@ -252,7 +252,7 @@ const Coupenmainuser = ({ children }) => {
                             <ListItem
                               alignItems="flex-start"
                               sx={{
-                                background: "#720811",
+                                background: "#FFFFFF",
                                 borderRadius: 2,
                                 mb: 1,
                                 padding: "10px 16px",

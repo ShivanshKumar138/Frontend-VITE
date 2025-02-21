@@ -127,7 +127,6 @@ const puzzleShapes = [
           width: `${sliderWidth}px`,
           height: `${sliderHeight}px`,
           position: "relative",
-          border: "1px solid #ccc",
           backgroundImage: imageLoaded ? `url(${backgroundImage})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -142,7 +141,7 @@ const puzzleShapes = [
           height={puzzlePieceHeight}
           style={{
             position: "absolute",
-            bottom: "30px",
+            bottom: "70px",
             left: `${puzzleGapPosition}px`,
             zIndex: 1,
           }}
@@ -160,7 +159,7 @@ const puzzleShapes = [
           height={puzzlePieceHeight}
           style={{
             position: "absolute",
-            bottom: "30px",
+            bottom: "70px",
             left: `${puzzlePieceLeft}px`,
             zIndex: 3,
             filter: "drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3))",
@@ -210,7 +209,7 @@ const puzzleShapes = [
         onPointerUp={stopDragging}
         onPointerCancel={stopDragging}
         style={{
-          width: `${sliderWidth}px`,
+          width: "348px",
           height: `${drawerHeight}px`,
           position: "relative",
           backgroundColor: "#f0f0f0",
@@ -289,27 +288,7 @@ const puzzleShapes = [
         </div>
       </div>
 
-      {showPopup && (
-        <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "white",
-            padding: "20px",
-            borderRadius: "10px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            zIndex: 1000,
-            textAlign: "center",
-          }}
-        >
-          <h2 style={{ margin: "0 0 10px 0", color: "#007bff" }}>
-            Congratulations!
-          </h2>
-          <p style={{ margin: "0", fontSize: "18px" }}>Puzzle Solved!</p>
-        </div>
-      )}
+     
 
       <button
         onClick={generateRandomPattern}
@@ -317,7 +296,7 @@ const puzzleShapes = [
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "352px",
+          width: "350px",
           height: `${drawerHeight}px`,
           margin: "-1px auto 0 auto",
           backgroundColor: "rgb(255,255,255)",
@@ -327,7 +306,7 @@ const puzzleShapes = [
           fontFamily: "Arial, sans-serif",
           fontSize: "14px",
           transition: "all 0.2s ease",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          
         }}
         onMouseOver={(e) => {
           e.currentTarget.style.backgroundColor = "rgb(255,255,255)";

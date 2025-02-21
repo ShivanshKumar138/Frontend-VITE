@@ -348,9 +348,9 @@ const LotteryAppt = ({ timerKey }) => {
   };
 
   const textArray = [
-    "We are excited to welcome you to Gen-Z Win, where you can enjoy a wide range of games. But that's not all - there are also plenty of bonuses waiting for you to claim! Join us now and start play your game with Gen-Z Win. Get ready for non-stop fun and rewards. Welcome aboard!  Stay tuned for more updates and promotions.",
-    "24/7 Live support on Gen-Z Win club ",
-    "Gen-Z Win club welcomes you here !!",
+    "We are excited to welcome you to Mahakal Club, where you can enjoy a wide range of games. But that's not all - there are also plenty of bonuses waiting for you to claim! Join us now and start play your game with Mahakal Club. Get ready for non-stop fun and rewards. Welcome aboard!  Stay tuned for more updates and promotions.",
+    "24/7 Live support on Mahakal Club club ",
+    "Mahakal Club club welcomes you here !!",
   ];
 
   const [index, setIndex] = React.useState(0);
